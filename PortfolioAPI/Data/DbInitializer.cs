@@ -49,5 +49,54 @@ public static class DbInitializer
             context.Skills.Add(s);
         }
         context.SaveChanges();
+
+        var experiences = new Experience[]
+        {
+            new Experience { 
+                Company = "Tech Corp", 
+                Position = "Junior Developer", 
+                StartDate = new DateTime(2025, 1, 1), 
+                Description = "Developing scalable backend services.",
+                TechUsed = ".NET, Azure"
+            }
+        };
+
+        foreach (Experience e in experiences)
+        {
+            context.Experiences.Add(e);
+        }
+
+        var educations = new Education[]
+        {
+            new Education { 
+                Institution = "University of Tech", 
+                Degree = "Bachelor", 
+                FieldOfStudy = "Computer Science", 
+                StartDate = new DateTime(2021, 9, 1), 
+                EndDate = new DateTime(2024, 6, 1) 
+            }
+        };
+
+        foreach (Education ed in educations)
+        {
+            context.Educations.Add(ed);
+        }
+
+        var recommendations = new Recommendation[]
+        {
+            new Recommendation { 
+                AuthorName = "Jane Doe", 
+                AuthorRole = "Senior Lead", 
+                Content = "A very talented system developer!",
+                LinkedInProfileUrl = "https://linkedin.com/in/janedoe"
+            }
+        };
+
+        foreach (Recommendation r in recommendations)
+        {
+            context.Recommendations.Add(r);
+        }
+
+        context.SaveChanges();
     }
 }
