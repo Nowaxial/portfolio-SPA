@@ -1,10 +1,50 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { fetchProjects, fetchSkills } from '../lib/api';
+
+const projects = await fetchProjects();
+const skills = await fetchSkills();
 ---
 
 <MainLayout title="My Portfolio">
-	<main style="padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-		<h1 style="font-size: 3rem; margin-bottom: 1rem;">System Developer Portfolio</h1>
-		<p style="font-size: 1.25rem; color: #aaa;">Modern. Interactive. Powered by .NET 10 and Astro.</p>
+	<main style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; min-height: 100vh;">
+		<section style="text-align: center; margin-bottom: 4rem;">
+			<h1 style="font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(to right, #339af0, #228be6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+				System Developer Portfolio
+			</h1>
+			<p style="font-size: 1.5rem; color: #aaa;">Modern. Interactive. Powered by .NET 10 and Astro.</p>
+		</section>
+
+		<section style="margin-bottom: 4rem;">
+			<h2 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid #333; padding-bottom: 0.5rem;">Core Skills</h2>
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+				{skills.map(skill => (
+					<div style="background: #1a1a1a; padding: 0.75rem 1.5rem; border-radius: 8px; border: 1px solid #333;">
+						{skill.name}
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section>
+			<h2 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid #333; padding-bottom: 0.5rem;">Featured Projects</h2>
+			<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+				{projects.map(project => (
+					<div style="background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 1px solid #333; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+						<div style="padding: 1.5rem;">
+							<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #339af0;">{project.title}</h3>
+							<p style="color: #ccc; margin-bottom: 1.5rem; line-height: 1.6;">{project.description}</p>
+							<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+								{project.techStack.split(',').map(tech => (
+									<span style="font-size: 0.8rem; background: #222; padding: 0.25rem 0.6rem; border-radius: 4px; color: #888; border: 1px solid #333;">
+										{tech.trim()}
+									</span>
+								))}
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
 	</main>
 </MainLayout>
