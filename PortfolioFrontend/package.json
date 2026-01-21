@@ -1,0 +1,23 @@
+{
+  "name": "portfoliofrontend",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@mantine/core": "^8.3.13",
+    "@mantine/form": "^8.3.13",
+    "@mantine/hooks": "^8.3.13",
+    "@mantine/notifications": "^8.3.13",
+    "@tabler/icons-react": "^3.36.1",
+    "astro": "^5.16.12",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
+}
