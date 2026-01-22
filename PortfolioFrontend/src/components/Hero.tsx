@@ -12,9 +12,9 @@ export function TerminalHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <Group justify="space-between" align="center" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '20px' }}>
+                    <Group justify="space-between" align="center" style={{ borderBottom: '1px solid var(--mantine-color-default-border)', paddingBottom: '20px' }}>
                         <Group gap={10}>
-                            <Box w={8} h={8} style={{ borderRadius: '50%', background: '#4c6ef5' }} />
+                            <Box w={8} h={8} style={{ borderRadius: '50%', background: 'var(--mantine-color-brand-filled)' }} />
                             <Text fz="xs" fw={700} tt="uppercase" style={{ letterSpacing: '1px' }}>System Online</Text>
                         </Group>
                         <Group gap={20} visibleFrom="sm">
@@ -40,8 +40,8 @@ export function TerminalHero() {
                             letterSpacing: '-0.02em',
                         }}
                     >
-                        Software <br />
-                        <span style={{ fontStyle: 'italic', color: '#4c6ef5' }}>System</span> Architect
+                        Architecture <br />
+                        <span style={{ fontStyle: 'italic', color: 'var(--mantine-color-brand-filled)' }}>System</span> Engineer
                     </Title>
                 </motion.div>
 

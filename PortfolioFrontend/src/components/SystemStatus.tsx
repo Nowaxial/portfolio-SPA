@@ -19,9 +19,9 @@ export function SystemStatus() {
         <Box
             style={{
                 padding: '24px',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                border: '1px solid var(--mantine-color-default-border)',
                 borderRadius: '12px',
-                backgroundColor: 'rgba(255,255,255,0.02)',
+                backgroundColor: 'var(--mantine-color-default)',
             }}
         >
             <Text size="xs" fw={700} tt="uppercase" c="dimmed" mb="lg" style={{ letterSpacing: '1px' }}>
@@ -45,7 +45,7 @@ export function SystemStatus() {
                     <Progress value={stats.mem} color="dark.3" size="sm" radius="xs" />
                 </Box>
 
-                <Group justify="space-between" mt="sm" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '12px' }}>
+                <Group justify="space-between" mt="sm" style={{ borderTop: '1px solid var(--mantine-color-default-border)', paddingTop: '12px' }}>
                     <Text size="xs" c="dimmed">Region</Text>
                     <Text size="xs" fw={500}>eu-north-1</Text>
                 </Group>

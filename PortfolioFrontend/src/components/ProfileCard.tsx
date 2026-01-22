@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Avatar, Text, Stack, Title, Group, Paper } from '@mantine/core';
+import { Box, Avatar, Text, Stack, Title, Group, Paper, Divider } from '@mantine/core';
 
 export function ProfileCard() {
     return (
@@ -8,8 +8,8 @@ export function ProfileCard() {
             radius="xs"
             mb={40}
             style={{
-                background: 'rgba(255, 255, 255, 0.02)',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
+                background: 'var(--mantine-color-default)',
+                border: '1px solid var(--mantine-color-default-border)',
             }}
         >
             <Stack gap="lg">
@@ -19,7 +19,7 @@ export function ProfileCard() {
                     mx="auto"
                     src="./data/Maria_Toledo_LinkedIn.jfif" // Replace with your image path (e.g., "/profile.jpg")
                     alt="Maria Toledo"
-                    style={{ border: '1px solid rgba(76, 110, 245, 0.3)' }}
+                    style={{ border: '1px solid var(--mantine-color-brand-filled)' }}
                 >
                     MT
                 </Avatar>
@@ -50,7 +50,7 @@ export function ProfileCard() {
                     </Text>
                 </Box>
 
-                <Divider size="xs" color="rgba(255,255,255,0.05)" />
+                <Divider color="var(--mantine-color-default-border)" />
 
                 <Box>
                     <Text
@@ -67,7 +67,7 @@ export function ProfileCard() {
                 </Box>
 
                 <Group gap="xs" mt={5}>
-                    <Box w={8} h={8} style={{ borderRadius: '50%', background: '#4c6ef5' }} />
+                    <Box w={8} h={8} style={{ borderRadius: '50%', background: 'var(--mantine-color-brand-filled)' }} />
                     <Text
                         size="xs"
                         fw={700}
@@ -85,6 +85,3 @@ export function ProfileCard() {
     );
 }
 
-const Divider = ({ size, color }: { size: any, color: string }) => (
-    <Box h={1} style={{ background: color, width: '100%' }} />
-);

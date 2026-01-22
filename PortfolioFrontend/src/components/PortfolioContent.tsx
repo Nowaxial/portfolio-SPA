@@ -50,12 +50,12 @@ export function PortfolioContent({ projects, skills, recommendations }: Portfoli
                                         style={{
                                             fontFamily: 'Space Grotesk, sans-serif',
                                             fontWeight: 500, // Medium for readability
-                                            borderBottom: '1px solid rgba(255,255,255,0.1)',
+                                            borderBottom: '1px solid var(--mantine-color-default-border)',
                                             padding: '4px 0',
-                                            color: '#E0E0E0'
+                                            color: 'var(--mantine-color-text)'
                                         }}
                                     >
-                                        {skill.name} <span style={{ color: '#5c7cff', margin: '0 8px' }}>/</span>
+                                        {skill.name} <span style={{ color: 'var(--mantine-color-brand-filled)', margin: '0 8px' }}>/</span>
                                     </Text>
                                 ))}
                             </Box>

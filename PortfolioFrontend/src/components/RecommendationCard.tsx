@@ -19,8 +19,8 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
                 p="xl"
                 radius="xs"
                 style={{
-                    background: 'rgba(255, 255, 255, 0.02)',
-                    border: '1px solid rgba(255, 255, 255, 0.05)',
+                    background: 'var(--mantine-color-default)',
+                    border: '1px solid var(--mantine-color-default-border)',
                     position: 'relative',
                     overflow: 'hidden'
                 }}
@@ -33,7 +33,7 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
                         left: 10,
                         fontSize: '120px',
                         fontFamily: 'Playfair Display, serif',
-                        color: 'rgba(76, 110, 245, 0.1)',
+                        color: 'var(--mantine-color-brand-light)',
                         lineHeight: 1,
                         userSelect: 'none',
                         zIndex: 0
@@ -49,7 +49,7 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
                             fontSize: '1rem',
                             lineHeight: 1.6,
                             fontStyle: 'italic',
-                            color: '#F8F9FA'
+                            color: 'var(--mantine-color-text)'
                         }}
                     >
                         {recommendation.text}
@@ -60,14 +60,16 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
                             src={recommendation.profileImage}
                             size="lg"
                             radius="xl"
-                            style={{ border: '2px solid rgba(76, 110, 245, 0.4)' }}
+                            imageProps={{ loading: 'lazy' }}
+                            alt={recommendation.name}
+                            style={{ border: '2px solid var(--mantine-color-brand-filled)' }}
                         />
                         <Stack gap={2}>
                             <Text
                                 fw={500}
                                 style={{
                                     fontFamily: 'Space Grotesk, sans-serif',
-                                    color: '#FFFFFF'
+                                    color: 'var(--mantine-color-text)'
                                 }}
                             >
                                 {recommendation.name}

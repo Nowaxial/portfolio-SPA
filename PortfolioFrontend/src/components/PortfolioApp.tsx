@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from './theme/ThemeProvider';
+import { ColorSchemeToggle } from './theme/ColorSchemeToggle';
 import { PortfolioContent } from './PortfolioContent';
 import type { Project, Skill, Recommendation } from '../types';
 
@@ -13,6 +14,8 @@ export function PortfolioApp({ projects, skills, recommendations }: PortfolioApp
     return (
         <ThemeProvider>
             <PortfolioContent projects={projects} skills={skills} recommendations={recommendations} />
+            <ColorSchemeToggle />
         </ThemeProvider>
     );
 }
+

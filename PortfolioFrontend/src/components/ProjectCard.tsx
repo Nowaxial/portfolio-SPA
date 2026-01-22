@@ -15,9 +15,9 @@ export function ProjectCard({ project }: { project: Project }) {
                 radius="lg"
                 withBorder
                 style={{
-                    backgroundColor: 'rgba(255,255,255,0.03)',
-                    borderColor: 'rgba(255,255,255,0.08)',
-                    transition: 'border-color 0.3s ease',
+                    backgroundColor: 'var(--mantine-color-default)',
+                    borderColor: 'var(--mantine-color-default-border)',
+                    transition: 'all 0.3s ease',
                 }}
                 className="hover:border-primary"
             >
@@ -33,7 +33,7 @@ export function ProjectCard({ project }: { project: Project }) {
                                 component="a"
                                 href={project.githubUrl}
                                 target="_blank"
-                                aria-label="View on GitHub"
+                                aria-label={`View ${project.title} on GitHub`}
                             >
                                 <IconBrandGithub size={18} />
                             </ActionIcon>
@@ -45,7 +45,7 @@ export function ProjectCard({ project }: { project: Project }) {
                                 component="a"
                                 href={project.liveUrl}
                                 target="_blank"
-                                aria-label="Visit Live Site"
+                                aria-label={`Visit ${project.title} live site`}
                             >
                                 <IconArrowUpRight size={18} />
                             </ActionIcon>
@@ -69,8 +69,8 @@ export function ProjectCard({ project }: { project: Project }) {
                                 textTransform: 'lowercase',
                                 fontWeight: 400,
                                 fontFamily: 'JetBrains Mono',
-                                borderColor: 'rgba(255,255,255,0.15)',
-                                color: '#ccc'
+                                borderColor: 'var(--mantine-color-default-border)',
+                                color: 'var(--mantine-color-text)'
                             }}
                         >
                             {tech.trim()}
