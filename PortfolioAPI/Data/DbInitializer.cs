@@ -56,17 +56,17 @@ public static class DbInitializer
         var skills = new Skill[]
         {
             // Backend & Architecture
-            new Skill { Name = "C#", Category = "Backend", IconKey = "si-csharp" },
+            new Skill { Name = "C#", Category = "Backend", IconKey = "devicon-csharp-plain" },
             new Skill { Name = ".NET 8", Category = "Backend", IconKey = "si-dotnet" },
             new Skill { Name = ".NET 10", Category = "Backend", IconKey = "si-dotnet" },
             new Skill { Name = "ASP.NET Core", Category = "Backend", IconKey = "si-dotnet" },
             new Skill { Name = "ASP.NET Core MVC", Category = "Backend", IconKey = "si-dotnet" },
-            new Skill { Name = "Entity Framework Core", Category = "Backend", IconKey = "si-dotnet" },
-            new Skill { Name = "SQL Server", Category = "Database", IconKey = "si-microsoftsqlserver" },
+            new Skill { Name = "Entity Framework Core", Category = "Backend", IconKey = "devicon-entityframeworkcore-plain" },
+            new Skill { Name = "SQL Server", Category = "Database", IconKey = "devicon-microsoftsqlserver-plain" },
             new Skill { Name = "REST API", Category = "Backend", IconKey = "si-swagger" },
             new Skill { Name = "LINQ", Category = "Backend", IconKey = "si-dotnet" },
-            new Skill { Name = "MySQL", Category = "Database", IconKey = "si-mysql" },
-            new Skill { Name = "NoSQL", Category = "Database", IconKey = "si-mongodb" },
+            new Skill { Name = "MySQL", Category = "Database", IconKey = "devicon-mysql-plain" },
+            new Skill { Name = "NoSQL", Category = "Database", IconKey = "devicon-mongodb-plain" },
             
             // Testing
             new Skill { Name = "xUnit", Category = "Testing", IconKey = "si-dotnet" },
@@ -74,28 +74,28 @@ public static class DbInitializer
             new Skill { Name = "TDD", Category = "Testing", IconKey = "si-dotnet" },
             
             // Frontend & Design
-            new Skill { Name = "React", Category = "Frontend", IconKey = "si-react" },
-            new Skill { Name = "React.js", Category = "Frontend", IconKey = "si-react" },
-            new Skill { Name = "Next.js", Category = "Frontend", IconKey = "si-nextdotjs" },
+            new Skill { Name = "React", Category = "Frontend", IconKey = "devicon-react-original" },
+            new Skill { Name = "React.js", Category = "Frontend", IconKey = "devicon-react-original" },
+            new Skill { Name = "Next.js", Category = "Frontend", IconKey = "devicon-nextjs-plain" },
             new Skill { Name = "Blazor WASM", Category = "Frontend", IconKey = "si-blazor" },
-            new Skill { Name = "JavaScript", Category = "Frontend", IconKey = "si-javascript" },
-            new Skill { Name = "TypeScript", Category = "Frontend", IconKey = "si-typescript" },
-            new Skill { Name = "HTML5", Category = "Frontend", IconKey = "si-html5" },
-            new Skill { Name = "CSS3", Category = "Frontend", IconKey = "si-css3" },
-            new Skill { Name = "Bootstrap 5", Category = "Frontend", IconKey = "si-bootstrap" },
-            new Skill { Name = "Mantine UI", Category = "Frontend", IconKey = "si-react" },
-            new Skill { Name = "jQuery", Category = "Frontend", IconKey = "si-jquery" },
-            new Skill { Name = "Node.js", Category = "Backend", IconKey = "si-nodedotjs" },
+            new Skill { Name = "JavaScript", Category = "Frontend", IconKey = "devicon-javascript-plain" },
+            new Skill { Name = "TypeScript", Category = "Frontend", IconKey = "devicon-typescript-plain" },
+            new Skill { Name = "HTML5", Category = "Frontend", IconKey = "devicon-html5-plain" },
+            new Skill { Name = "CSS3", Category = "Frontend", IconKey = "devicon-css3-plain" },
+            new Skill { Name = "Bootstrap 5", Category = "Frontend", IconKey = "devicon-bootstrap-plain" },
+            new Skill { Name = "Mantine UI", Category = "Frontend", IconKey = "si-mantine" },
+            new Skill { Name = "jQuery", Category = "Frontend", IconKey = "devicon-jquery-plain" },
+            new Skill { Name = "Node.js", Category = "Backend", IconKey = "devicon-nodejs-plain" },
             
             // Cloud & DevOps
-            new Skill { Name = "Microsoft Azure", Category = "Cloud", IconKey = "si-microsoftazure" },
-            new Skill { Name = "Azure App Services", Category = "Cloud", IconKey = "si-microsoftazure" },
-            new Skill { Name = "Azure SQL Database", Category = "Cloud", IconKey = "si-microsoftazure" },
+            new Skill { Name = "Microsoft Azure", Category = "Cloud", IconKey = "devicon-azure-plain" },
+            new Skill { Name = "Azure App Services", Category = "Cloud", IconKey = "devicon-azure-plain" },
+            new Skill { Name = "Azure SQL Database", Category = "Cloud", IconKey = "devicon-azuresqldatabase-plain" },
             new Skill { Name = "Azure DevOps", Category = "DevOps", IconKey = "si-azuredevops" },
             new Skill { Name = "CI/CD", Category = "DevOps", IconKey = "si-azurepipelines" },
-            new Skill { Name = "Git", Category = "DevOps", IconKey = "si-git" },
-            new Skill { Name = "GitHub", Category = "DevOps", IconKey = "si-github" },
-            new Skill { Name = "Docker", Category = "DevOps", IconKey = "si-docker" },
+            new Skill { Name = "Git", Category = "DevOps", IconKey = "devicon-git-plain" },
+            new Skill { Name = "GitHub", Category = "DevOps", IconKey = "devicon-github-original" },
+            new Skill { Name = "Docker", Category = "DevOps", IconKey = "devicon-docker-plain" },
             new Skill { Name = "Swagger", Category = "DevOps", IconKey = "si-swagger" },
             
             // Methodology & Other
@@ -103,11 +103,11 @@ public static class DbInitializer
             new Skill { Name = "Agile", Category = "Methodology", IconKey = "si-agile" },
             new Skill { Name = "Web Security", Category = "Security", IconKey = "si-letsencrypt" },
             new Skill { Name = "OWASP", Category = "Security", IconKey = "si-owasp" },
-            new Skill { Name = "Koha", Category = "Other", IconKey = "si-library" },
-            new Skill { Name = "Perl", Category = "Backend", IconKey = "si-perl" },
-            new Skill { Name = "PHP", Category = "Backend", IconKey = "si-php" },
-            new Skill { Name = "Laravel", Category = "Backend", IconKey = "si-laravel" },
-            new Skill { Name = "CodeIgniter", Category = "Backend", IconKey = "si-codeigniter" }
+            new Skill { Name = "Koha", Category = "Other", IconKey = "custom-koha" },
+            new Skill { Name = "Perl", Category = "Backend", IconKey = "devicon-perl-plain" },
+            new Skill { Name = "PHP", Category = "Backend", IconKey = "devicon-php-plain" },
+            new Skill { Name = "Laravel", Category = "Backend", IconKey = "devicon-laravel-original" },
+            new Skill { Name = "CodeIgniter", Category = "Backend", IconKey = "devicon-codeigniter-plain" }
         };
 
         foreach (Skill s in skills)

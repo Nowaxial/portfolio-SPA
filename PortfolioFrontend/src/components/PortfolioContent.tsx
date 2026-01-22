@@ -5,6 +5,7 @@ import { SystemStatus } from './SystemStatus';
 import { ProjectCard } from './ProjectCard';
 import { RecommendationCard } from './RecommendationCard';
 import { ProfileCard } from './ProfileCard';
+import { TechIcon } from './TechIcon';
 import type { Project, Skill, Recommendation } from '../types';
 
 interface PortfolioContentProps {
@@ -42,21 +43,29 @@ export function PortfolioContent({ projects, skills, recommendations }: Portfoli
                                 <Badge variant="dot" color="green" size="lg" radius="xs">System Active</Badge>
                             </Group>
 
-                            <Box style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                            <Box style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                                 {skills.map(skill => (
-                                    <Text
+                                    <Group
                                         key={skill.id}
-                                        size="lg"
+                                        gap={10}
                                         style={{
-                                            fontFamily: 'Space Grotesk, sans-serif',
-                                            fontWeight: 500, // Medium for readability
                                             borderBottom: '1px solid var(--mantine-color-default-border)',
-                                            padding: '4px 0',
-                                            color: 'var(--mantine-color-text)'
+                                            padding: '8px 0',
                                         }}
                                     >
-                                        {skill.name} <span style={{ color: 'var(--mantine-color-brand-filled)', margin: '0 8px' }}>/</span>
-                                    </Text>
+                                        <TechIcon iconKey={skill.iconKey} size={18} color="var(--mantine-color-brand-filled)" />
+                                        <Text
+                                            size="lg"
+                                            style={{
+                                                fontFamily: 'Space Grotesk, sans-serif',
+                                                fontWeight: 500,
+                                                color: 'var(--mantine-color-text)'
+                                            }}
+                                        >
+                                            {skill.name}
+                                        </Text>
+                                        <Text c="dimmed" fw={300} style={{ margin: '0 4px' }}>/</Text>
+                                    </Group>
                                 ))}
                             </Box>
                         </Box>
