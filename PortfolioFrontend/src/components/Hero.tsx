@@ -15,7 +15,7 @@ export function TerminalHero() {
                     <Group justify="space-between" align="center" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '20px' }}>
                         <Group gap={10}>
                             <Box w={8} h={8} style={{ borderRadius: '50%', background: '#4c6ef5' }} />
-                            <Text fz="xs" fw={700} tt="uppercase" ls={1}>System Online</Text>
+                            <Text fz="xs" fw={700} tt="uppercase" style={{ letterSpacing: '1px' }}>System Online</Text>
                         </Group>
                         <Group gap={20} visibleFrom="sm">
                             <Text fz="xs" c="dimmed" tt="uppercase">Based in Sweden</Text>

@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="PortfolioAPI/PortfolioAPI.csproj" />
+  <Project Path="PortfolioFrontend/PortfolioFrontend.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

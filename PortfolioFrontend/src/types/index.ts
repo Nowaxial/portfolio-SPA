@@ -40,9 +40,10 @@ export interface Education {
 
 export interface Recommendation {
     id: number;
-    authorName: string;
-    authorRole: string;
-    content: string;
-    authorAvatar?: string;
-    linkedInProfileUrl?: string;
+    name: string;
+    position: string;
+    company: string;
+    text: string;
+    profileImage?: string;
+    profileUrl?: string;
 }

@@ -1,12 +1,13 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { fetchProjects, fetchSkills } from '../lib/api';
+import { fetchProjects, fetchSkills, fetchRecommendations } from '../lib/api';
 import { PortfolioApp } from '../components/PortfolioApp';
 
 const projects = await fetchProjects();
 const skills = await fetchSkills();
+const recommendations = await fetchRecommendations();
 ---
 
 <MainLayout title="Portfolio | System Developer">
-	<PortfolioApp projects={projects} skills={skills} client:load />
+	<PortfolioApp projects={projects} skills={skills} recommendations={recommendations} client:load />
 </MainLayout>

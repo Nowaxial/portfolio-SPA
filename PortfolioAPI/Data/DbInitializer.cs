@@ -24,10 +24,10 @@ public static class DbInitializer
                 IsFeatured = true
             },
             new Project { 
-                Title = "Fullstack Developer Portfolio", 
-                Description = "Högpresterande webbapplikation med Astro 5 och React 19 för optimal laddningshastighet. Robust REST API i .NET 10 med ASP.NET Core, JWT-autentisering och Swagger. Datapersistens med EF Core 10 och SQL Server. Modernt gränssnitt med Mantine UI och TypeScript. Modulär komponentstruktur med Astro-öar och SSR för optimala Core Web Vitals och maximal SEO-prestanda.",
-                TechStack = "Astro 5, React 19, .NET 10, ASP.NET Core, EF Core 10, SQL Server, Mantine UI, TypeScript, JWT",
-                GithubUrl = "https://github.com/Nowaxial/fullstack-portfolio",
+                Title = "Editorial Tech Portfolio", 
+                Description = "Högpresterande och arkitektoniskt genomtänkt portfolio byggd med Astro 5 och React 19. Systemet använder en frikopplad arkitektur med en robust .NET 10 Web API backend, EF Core och SQLite. Designen följer en 'Editorial Tech' estetik med fokus på precision, typografi och systemtransparens.",
+                TechStack = "Astro 5, React 19, .NET 10, ASP.NET Core, EF Core, SQLite, Mantine UI, TypeScript, Framer Motion",
+                GithubUrl = "https://github.com/Nowaxial/portfolio-spa",
                 IsFeatured = true
             },
             new Project { 
@@ -325,16 +325,20 @@ public static class DbInitializer
         var recommendations = new Recommendation[]
         {
             new Recommendation { 
-                AuthorName = "Ulla Frennesson", 
-                AuthorRole = "SEO/Founder at Open Mind Strategic Management AB", 
-                Content = "Vi är mycket imponerade över både bredd och djup i hennes kunskaper. Det har ännu inte varit något problem som hon inte lyckats lösa. Maria löste detta på 15 min och problemet kom inte tillbaka.",
-                LinkedInProfileUrl = "https://www.linkedin.com/in/ulla-frennesson-b694445/"
+                Name = "Ulla Frennesson", 
+                Position = "SEO/Founder", 
+                Company = "Open Mind Strategic Management AB",
+                Text = "De senaste åren har Maria vid olika tillfällen varit oss behjälplig med privata problem med TV, datorer och telefon. Vi är mycket imponerade över både bredd och djup i hennes kunskaper. Det har ännu inte varit något problem som hon inte lyckats lösa. Två särskilt utmanande exempel är problem med TV sändningen. Telia kunde inte hjälpa oss på telefon. De skickade en konsult som kom och debiterade. En timma efter konsulten lämnat så var problemet tillbaka. Maria löste detta på 15 min och problemet kom inte tillbaka. För två år sedan gjorde jag en fotobok. Ville nu beställa fler men hittade den inte. Kundservice sa att den fanns på min gamla laptop och eftersom den var kasserad så gick boken inte att beställa utan att den skulle återskapas på nytt. Samma besked av 3 olika personer på kundsupport. När jag ber Maria om hjälp tar det inte lång stund innan hon hittar fotoboken. Vi tycker att Maria har mycket hög kompetens inom de olika områden som vi behövt hjälp med och vi ger henne de allra bästa rekommendationer.",
+                ProfileImage = "https://media.licdn.com/dms/image/v2/C4D03AQG2X3GtsP4pXg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1541592305789?e=1770854400&v=beta&t=drBPisNqg_SX82iv7hzLievgkiuzCP3iPHRNf_OHF6w",
+                ProfileUrl = "https://www.linkedin.com/in/ulla-frennesson-b694445/"
             },
             new Recommendation { 
-                AuthorName = "Sonja Parvizmoradi", 
-                AuthorRole = "Product Development Manager at Filmstaden", 
-                Content = "Maria är en lojal och dedikerad kollega som alltid visar stort ansvar i allt hon gör. Hon är pålitlig, arbetsam och en person man alltid kan räkna med.",
-                LinkedInProfileUrl = "https://www.linkedin.com/in/sonjaparvizmoradi/"
+                Name = "Sonja Parvizmoradi", 
+                Position = "Product Development Manager/ Brand Marketing", 
+                Company = "tbpsupplytbpsupply",
+                Text = "Jag har haft tillfället att arbeta tillsammans med Maria på Filmstaden, och jag kan varmt rekommendera henne. Maria är en lojal och dedikerad kollega som alltid visar stort ansvar i allt hon gör. Maria har även starka ledaregenskaper. Hon är trygg, strukturerad och får alltid sitt team att känna sig sedda och motiverade. När det uppstår stressiga situationer håller hon sig lugn och lösningsorienterad, vilket gör henne ovärderlig i ett snabbt och dynamiskt arbetsklimat. Hon är pålitlig, arbetsam och en person man alltid kan räkna med. Jag rekommenderar henne helhjärtat för framtida roller.",
+                ProfileImage = "https://media.licdn.com/dms/image/v2/D4D35AQGIiC0rJMLH1A/profile-framedphoto-shrink_400_400/B4DZUZcwTUHIAc-/0/1739888723526?e=1769522400&v=beta&t=RdghAi7MRhuwKsbjzhWrmnFW5-KSOfJ7rc6-wnY8L_0",
+                ProfileUrl = "https://www.linkedin.com/in/sonjaparvizmoradi/"
             }
         };
 

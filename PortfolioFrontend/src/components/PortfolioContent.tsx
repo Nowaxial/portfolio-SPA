@@ -1,16 +1,19 @@
 import React from 'react';
-import { Container, Grid, Title, Box, Badge, Text, Group, Divider } from '@mantine/core';
+import { Container, Grid, Title, Box, Badge, Text, Group, Divider, Stack } from '@mantine/core';
 import { TerminalHero } from './Hero';
 import { SystemStatus } from './SystemStatus';
 import { ProjectCard } from './ProjectCard';
-import type { Project, Skill } from '../types';
+import { RecommendationCard } from './RecommendationCard';
+import { ProfileCard } from './ProfileCard';
+import type { Project, Skill, Recommendation } from '../types';
 
 interface PortfolioContentProps {
     projects: Project[];
     skills: Skill[];
+    recommendations: Recommendation[];
 }
 
-export function PortfolioContent({ projects, skills }: PortfolioContentProps) {
+export function PortfolioContent({ projects, skills, recommendations }: PortfolioContentProps) {
     return (
         <>
             <TerminalHero />
@@ -18,6 +21,19 @@ export function PortfolioContent({ projects, skills }: PortfolioContentProps) {
             <Container size="lg" pb={100}>
                 <Grid gutter={50}>
                     <Grid.Col span={{ base: 12, md: 8 }}>
+                        <Box mb={80}>
+                            <Title order={2} mb={40} style={{ fontFamily: 'Playfair Display, serif', fontWeight: 500, fontSize: '32px' }}>
+                                Selected Works
+                            </Title>
+                            <Grid gutter="xl">
+                                {projects.map(project => (
+                                    <Grid.Col key={project.id} span={{ base: 12 }}>
+                                        <ProjectCard project={project} />
+                                    </Grid.Col>
+                                ))}
+                            </Grid>
+                        </Box>
+
                         <Box mb={80}>
                             <Group align="center" mb={30} gap={15}>
                                 <Title order={2} style={{ fontFamily: 'Playfair Display, serif', fontWeight: 500, fontSize: '32px' }}>
@@ -46,21 +62,23 @@ export function PortfolioContent({ projects, skills }: PortfolioContentProps) {
                         </Box>
 
                         <Box>
-                            <Title order={2} mb={40} style={{ fontFamily: 'Playfair Display, serif', fontWeight: 500, fontSize: '32px' }}>
-                                Selected Works
-                            </Title>
-                            <Grid gutter="xl">
-                                {projects.map(project => (
-                                    <Grid.Col key={project.id} span={{ base: 12 }}>
-                                        <ProjectCard project={project} />
-                                    </Grid.Col>
+                            <Group align="center" mb={40} gap={15}>
+                                <Title order={2} style={{ fontFamily: 'Playfair Display, serif', fontWeight: 500, fontSize: '32px' }}>
+                                    Recommendations
+                                </Title>
+                                <Badge variant="outline" color="indigo" size="sm" radius="xs" tt="uppercase">Endorsements</Badge>
+                            </Group>
+                            <Stack gap="xl">
+                                {recommendations.map(rec => (
+                                    <RecommendationCard key={rec.id} recommendation={rec} />
                                 ))}
-                            </Grid>
+                            </Stack>
                         </Box>
                     </Grid.Col>
 
                     <Grid.Col span={{ base: 12, md: 4 }}>
                         <Box style={{ position: 'sticky', top: '40px' }}>
+                            <ProfileCard />
                             <SystemStatus />
 
                             <Box mt={40}>
