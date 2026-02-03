@@ -48,16 +48,30 @@ function GithubPulse() {
                 const pushEvent = events.find((e: any) => e.type === 'PushEvent');
 
                 if (pushEvent) {
+                    let commitMsg = pushEvent.payload.commits?.[0]?.message;
+                    const repoFullName = pushEvent.repo.name;
+
+                    // If message is missing in payload (common in some events), fetch it from commits
+                    if (!commitMsg) {
+                        try {
+                            const commitRes = await fetch(`https://api.github.com/repos/${repoFullName}/commits/${pushEvent.payload.head}`);
+                            const commitData = await commitRes.json();
+                            commitMsg = commitData.commit.message;
+                        } catch (e) {
+                            commitMsg = 'Updated source code';
+                        }
+                    }
+
                     const data = {
-                        message: pushEvent.payload.commits[0]?.message || 'Code update',
-                        repo: pushEvent.repo.name.split('/')[1],
+                        message: commitMsg || 'Code update',
+                        repo: repoFullName.split('/')[1],
                         time: new Date(pushEvent.created_at).toLocaleDateString()
                     };
                     setCommit(data);
-                    // Cache for 10 minutes
+                    // Cache for 2 minutes (better for testing/refreshes)
                     sessionStorage.setItem('gh_pulse', JSON.stringify({
                         data,
-                        expiry: Date.now() + 10 * 60 * 1000
+                        expiry: Date.now() + 2 * 60 * 1000
                     }));
                 }
             } catch (err) {
