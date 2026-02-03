@@ -149,15 +149,15 @@ export function Header() {
                         Socials
                     </Text>
                     <Group gap="xl">
-                        <UnstyledButton component="a" href="#" style={{ display: 'flex', alignItems: 'center', gap: rem(8) }}>
+                        <UnstyledButton component="a" href="https://www.linkedin.com/in/mariatoledosilva/" style={{ display: 'flex', alignItems: 'center', gap: rem(8) }}>
                             <IconBrandLinkedin size={20} color="var(--mantine-color-brand-4)" />
                             <Text size="sm" fw={500} c="dimmed">LinkedIn</Text>
                         </UnstyledButton>
-                        <UnstyledButton component="a" href="#" style={{ display: 'flex', alignItems: 'center', gap: rem(8) }}>
+                        <UnstyledButton component="a" href="https://github.com/Nowaxial" style={{ display: 'flex', alignItems: 'center', gap: rem(8) }}>
                             <IconBrandGithub size={20} color="var(--mantine-color-brand-4)" />
                             <Text size="sm" fw={500} c="dimmed">GitHub</Text>
                         </UnstyledButton>
-                        <UnstyledButton component="a" href="#" style={{ display: 'flex', alignItems: 'center', gap: rem(8) }}>
+                        <UnstyledButton component="a" href="mailto:maria.toledo.silva@outlook.com?subject=Found%20your%2020Portfolio.%20Let's%20connect!" style={{ display: 'flex', alignItems: 'center', gap: rem(8) }}>
                             <IconMail size={20} color="var(--mantine-color-brand-4)" />
                             <Text size="sm" fw={500} c="dimmed">Email</Text>
                         </UnstyledButton>
