@@ -178,17 +178,6 @@ export function PortfolioContent({ projects: initialProjects, skills: initialSki
                             <Box style={{ position: 'sticky', top: '40px' }}>
                                 <ProfileCard />
                                 <SystemStatus />
-
-                                <Box mt={40}>
-                                    <Text size="xs" fw={700} tt="uppercase" c="dimmed" mb="md" style={{ letterSpacing: '1px' }}>
-                                        Architecture Note
-                                    </Text>
-                                    <Text size="sm" c="dimmed" lh={1.6}>
-                                        This portfolio operates on a decoupled architecture.
-                                        The backend is a .NET 10 Web API utilizing EF Core and SQLite.
-                                        The frontend is built with Astro (SSR) and React, styled via Mantine.
-                                    </Text>
-                                </Box>
                             </Box>
                         </Grid.Col>
                     </Grid>
