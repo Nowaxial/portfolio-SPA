@@ -14,6 +14,9 @@ node_modules/
 dist/
 .astro/
 
+# ASP.NET wwwroot (generated from Astro build)
+wwwroot/
+
 # IDEs
 .vs/
 .vscode/
@@ -22,3 +25,6 @@ dist/
 # OS
 Thumbs.db
 .DS_Store
+PortfolioAPI/Properties/PublishProfiles/site51669-WebDeploy.pubxml
+/temp_cicd.svg
+/build_deploy.ps1
