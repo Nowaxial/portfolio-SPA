@@ -13,6 +13,7 @@ export function ColorSchemeToggle() {
             variant="default"
             size="lg"
             aria-label="Toggle color scheme"
+            visibleFrom="md"
             style={{
                 position: 'fixed',
                 bottom: 20,

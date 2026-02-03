@@ -8,6 +8,7 @@ public class Project
     public string TechStack { get; set; } = string.Empty; // Store as comma-separated or JSON
     public string? GithubUrl { get; set; }
     public string? LiveUrl { get; set; }
+    public string? ImageUrl { get; set; }
     public string? ArchitectureDiagram { get; set; }
     public bool IsFeatured { get; set; }
 }

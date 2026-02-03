@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { Container, Group, Text, Burger, Drawer, Stack, Box, UnstyledButton, rem, useMantineTheme } from '@mantine/core';
+import { Container, Group, Text, Burger, Drawer, Stack, Box, UnstyledButton, rem, useMantineTheme, ActionIcon, useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconBrandLinkedin, IconBrandGithub, IconMail } from '@tabler/icons-react';
+import { IconBrandLinkedin, IconBrandGithub, IconMail, IconSun, IconMoon } from '@tabler/icons-react';
 
 const navLinks = [
     { label: 'Top', href: '#top' },
@@ -13,6 +12,8 @@ const navLinks = [
 export function Header() {
     const [opened, { toggle, close }] = useDisclosure(false);
     const theme = useMantineTheme();
+    const { setColorScheme } = useMantineColorScheme();
+    const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
 
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
@@ -68,16 +69,34 @@ export function Header() {
                             MTS
                         </Text>
 
-                        <Group gap="xs">
-                            <Text size="xs" tt="uppercase" fw={700} c="dimmed" variant="gradient"
-                                gradient={{ from: 'brand.3', to: 'brand.5', deg: 45 }} style={{ letterSpacing: '1px', fontFamily: 'Playfair Display, serif', userSelect: 'none' }}>Menu</Text>
-                            <Burger
-                                opened={opened}
-                                onClick={toggle}
-                                size="sm"
-                                color="brand.4"
-                                transitionDuration={400}
-                            />
+                        <Group gap="sm">
+                            <ActionIcon
+                                onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}
+                                variant="transparent"
+                                size="lg"
+                                aria-label="Toggle color scheme"
+                                style={{
+                                    color: 'var(--mantine-color-brand-4)',
+                                }}
+                            >
+                                {computedColorScheme === 'light' ? (
+                                    <IconMoon stroke={1.5} size={20} />
+                                ) : (
+                                    <IconSun stroke={1.5} size={20} />
+                                )}
+                            </ActionIcon>
+
+                            <Group gap={4}>
+                                <Text size="xs" tt="uppercase" fw={700} c="dimmed" variant="gradient"
+                                    gradient={{ from: 'brand.3', to: 'brand.5', deg: 45 }} style={{ letterSpacing: '1px', fontFamily: 'Playfair Display, serif', userSelect: 'none' }}>Menu</Text>
+                                <Burger
+                                    opened={opened}
+                                    onClick={toggle}
+                                    size="sm"
+                                    color="brand.4"
+                                    transitionDuration={400}
+                                />
+                            </Group>
                         </Group>
                     </Group>
                 </Container>

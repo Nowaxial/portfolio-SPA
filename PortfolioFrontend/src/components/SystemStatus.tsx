@@ -26,7 +26,7 @@ public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
 
 // --- GithubPulse Component ---
 function GithubPulse() {
-    const [commit, setCommit] = useState<{ message: string; repo: string; time: string } | null>(null);
+    const [commit, setCommit] = useState<{ message: string; repo: string; time: string; url: string } | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -50,11 +50,12 @@ function GithubPulse() {
                 if (pushEvent) {
                     let commitMsg = pushEvent.payload.commits?.[0]?.message;
                     const repoFullName = pushEvent.repo.name;
+                    const headSha = pushEvent.payload.head;
 
                     // If message is missing in payload (common in some events), fetch it from commits
                     if (!commitMsg) {
                         try {
-                            const commitRes = await fetch(`https://api.github.com/repos/${repoFullName}/commits/${pushEvent.payload.head}`);
+                            const commitRes = await fetch(`https://api.github.com/repos/${repoFullName}/commits/${headSha}`);
                             const commitData = await commitRes.json();
                             commitMsg = commitData.commit.message;
                         } catch (e) {
@@ -65,7 +66,8 @@ function GithubPulse() {
                     const data = {
                         message: commitMsg || 'Code update',
                         repo: repoFullName.split('/')[1],
-                        time: new Date(pushEvent.created_at).toLocaleDateString()
+                        time: new Date(pushEvent.created_at).toLocaleDateString(),
+                        url: `https://github.com/${repoFullName}/commit/${headSha}`
                     };
                     setCommit(data);
                     // Cache for 2 minutes (better for testing/refreshes)
@@ -111,9 +113,24 @@ function GithubPulse() {
                 </Group>
             </Group>
 
-            <Text size="sm" fw={600} mb={4} lineClamp={2} style={{ color: 'var(--mantine-color-text)' }}>
-                {commit?.message || 'Deploying new features'}
-            </Text>
+            <UnstyledButton
+                component="a"
+                href={commit?.url || '#'}
+                target="_blank"
+                style={{
+                    display: 'block',
+                    width: '100%',
+                    textAlign: 'left',
+                    '&:hover': {
+                        transform: 'translateX(4px)'
+                    },
+                    transition: 'transform 0.2s ease'
+                }}
+            >
+                <Text size="sm" fw={600} mb={4} lineClamp={2} style={{ color: 'var(--mantine-color-text)' }}>
+                    {commit?.message || 'Deploying new features'}
+                </Text>
+            </UnstyledButton>
 
             <Group gap="xs" wrap="nowrap">
                 <Text size="xs" c="dimmed" style={{ fontFamily: 'Space Grotesk' }}>

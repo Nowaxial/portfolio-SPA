@@ -19,18 +19,21 @@ public static class DbInitializer
         // ===== PROJECTS =====
         var projects = new Project[]
         {
-            new Project { 
-                Title = "DevShowCase Platform", 
-                Description = "Plattform för utvecklare byggd på Blazor WebAssembly och ASP.NET Core med ren separation av lager. Omfattande API med stöd för hantering av Competencies, Education, Licenses och Tech Stacks. Fullständig användarhantering via ASP.NET Core Identity med säkra inloggnings- och profilsystem. Optimerad koddelning mellan frontend och backend genom Shared-projekt. Avancerad loggning med Serilog och dokumentation via Swagger UI.",
-                TechStack = "Blazor WebAssembly, ASP.NET Core, ASP.NET Core Identity, Serilog, Swagger UI, C#",
-                GithubUrl = "https://github.com/Nowaxial",
-                IsFeatured = true
-            },
+            
             new Project { 
                 Title = "Editorial Tech Portfolio", 
                 Description = "Högpresterande och arkitektoniskt genomtänkt portfolio byggd med Astro 5 och React 19. Systemet använder en frikopplad arkitektur med en robust .NET 10 Web API backend, EF Core och SQLite. Designen följer en 'Editorial Tech' estetik med fokus på precision, typografi och systemtransparens.",
                 TechStack = "Astro 5, React 19, .NET 10, ASP.NET Core, EF Core, SQLite, Mantine UI, TypeScript, Framer Motion",
                 GithubUrl = "https://github.com/Nowaxial/portfolio-spa",
+                ImageUrl = "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
+                IsFeatured = true
+            },
+            new Project { 
+                Title = "DevShowCase Platform", 
+                Description = "Plattform för utvecklare byggd på Blazor WebAssembly och ASP.NET Core med ren separation av lager. Omfattande API med stöd för hantering av Competencies, Education, Licenses och Tech Stacks. Fullständig användarhantering via ASP.NET Core Identity med säkra inloggnings- och profilsystem. Optimerad koddelning mellan frontend och backend genom Shared-projekt. Avancerad loggning med Serilog och dokumentation via Swagger UI.",
+                TechStack = "Blazor WebAssembly, ASP.NET Core, ASP.NET Core Identity, Serilog, Swagger UI, C#",
+                GithubUrl = "https://github.com/Nowaxial/devshowcase-platform",
+                ImageUrl = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
                 IsFeatured = true
             },
             new Project { 
@@ -38,6 +41,7 @@ public static class DbInitializer
                 Description = "Gruppprojekt: LMS med avancerat feedback-system för lärare och studenter. Vidareutveckling (Solo): Migrerade hela arkitekturen till Azure för skarp drift. Molnbaserad lagring via Azure Blob Storage och säkrad API-kommunikation med JWT-tokens. Fullständig CI/CD-pipeline och driftsättning till Azure App Service. Intelligent notifieringssystem som filtrerar händelser baserat på kurs- och rollbehörighet.",
                 TechStack = ".NET, Entity Framework, React, SQL Server, Azure Blob Storage, Azure App Service, Azure DevOps, JWT",
                 GithubUrl = "https://github.com/Nowaxial/Lexicon-FullStack-LMS-Grupp2",
+                ImageUrl = "https://camo.githubusercontent.com/93ec4dbf467cbab4c7d09884678e343441668a748da55a87581eefb464fd8da2/68747470733a2f2f692e6962622e636f2f4e6e7876794773482f4c4d532d4c657869636f6e2d4465736b746f702e6a7067",
                 IsFeatured = true
             },
             new Project { 
@@ -45,6 +49,7 @@ public static class DbInitializer
                 Description = "REST API i ASP.NET Core för strukturerad hantering av IT-inventarier och hårdvara. Integrerade Bogus för att generera och validera systemet med storskalig, realistisk testdata. CRUD-operationer med fokus på datasäkerhet och tydlig API-dokumentation via Swagger.",
                 TechStack = "ASP.NET Core, C#, Bogus, Swagger, REST API",
                 GithubUrl = "https://github.com/Nowaxial",
+                ImageUrl = "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
                 IsFeatured = false
             }
         };
