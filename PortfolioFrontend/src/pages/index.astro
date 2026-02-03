@@ -1,13 +1,11 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { fetchProjects, fetchSkills, fetchRecommendations } from '../lib/api';
 import { PortfolioApp } from '../components/PortfolioApp';
 
-const projects = await fetchProjects();
-const skills = await fetchSkills();
-const recommendations = await fetchRecommendations();
+// Pass empty arrays - PortfolioApp will fetch data client-side
+// This allows the build to complete without requiring the API to be running
 ---
 
 <MainLayout title="Portfolio | System Developer">
-	<PortfolioApp projects={projects} skills={skills} recommendations={recommendations} client:load />
+	<PortfolioApp projects={[]} skills={[]} recommendations={[]} client:load />
 </MainLayout>

@@ -12,7 +12,7 @@ export function ProjectCard({ project }: { project: Project }) {
         >
             <Card
                 padding="xl"
-                radius="lg"
+                radius="xs"
                 withBorder
                 style={{
                     backgroundColor: 'var(--mantine-color-default)',

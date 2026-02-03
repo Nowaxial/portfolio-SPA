@@ -40,6 +40,11 @@ export const theme = createTheme({
     headings: {
         fontFamily: 'Playfair Display, serif',
         fontWeight: '700',
+        sizes: {
+            h1: { fontSize: '2.5rem' },
+            h2: { fontSize: '2rem' },
+            h3: { fontSize: '1.5rem' },
+        }
     },
     defaultRadius: 'md',
     cursorType: 'pointer',

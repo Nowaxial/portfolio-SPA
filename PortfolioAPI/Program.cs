@@ -14,9 +14,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAstro", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:4321") // Astro default port
+        var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() 
+            ?? new[] { "http://localhost:4321" };
+        
+        policy.WithOrigins(allowedOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -48,12 +51,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Serve static files from wwwroot (Astro build output)
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAstro");
+app.UseCors("AllowFrontend");
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Fallback to index.html for client-side routing (SPA support)
+app.MapFallbackToFile("index.html");
 
 app.Run();

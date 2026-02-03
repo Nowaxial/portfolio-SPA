@@ -3,8 +3,9 @@ import * as SiIcons from 'react-icons/si';
 import { SiReact } from 'react-icons/si';
 import type { IconType } from 'react-icons';
 
+import { AgileIcon } from './icons/AgileIcon';
 import { KohaIcon } from './icons/KohaIcon';
-// import { ReactComponent as KohaIcon } from '../../public/icons/koha.svg'; // If using SVGR
+import { CiCdIcon } from './icons/CiCdIcon';
 
 interface TechIconProps {
     iconKey: string;
@@ -14,8 +15,14 @@ interface TechIconProps {
 
 export const TechIcon: React.FC<TechIconProps> = ({ iconKey, size = 20, color }) => {
     // 0. Handle Custom SVG Components
+    if (iconKey === 'custom-agile' || iconKey === 'si-agile') {
+        return <AgileIcon size={size} color={color} />;
+    }
     if (iconKey === 'custom-koha') {
         return <KohaIcon size={size} color={color} />;
+    }
+    if (iconKey === 'custom-cicd') {
+        return <CiCdIcon size={size} color={color} />;
     }
 
     // 1. Handle Masked Local Image (behaes like SVG with currentColor)

@@ -1,6 +1,7 @@
 import type { Project, Skill, Experience, Education, Recommendation } from '../types';
 
-const API_BASE_URL = 'http://localhost:5073/api'; // In production, this would come from an environment variable
+// Use relative URL in production (same domain), absolute URL in development handled by Astro proxy
+const API_BASE_URL = '/api';
 
 export async function fetchProjects(): Promise<Project[]> {
     const response = await fetch(`${API_BASE_URL}/projects`);

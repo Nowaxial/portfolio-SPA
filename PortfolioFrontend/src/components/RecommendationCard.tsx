@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Text, Avatar, Group, Stack, Paper } from '@mantine/core';
+import { Box, Text, Avatar, Group, Stack, Paper, ThemeIcon } from '@mantine/core';
 import { motion } from 'framer-motion';
+import { IconQuote } from '@tabler/icons-react';
 import type { Recommendation } from '../types';
 
 interface RecommendationCardProps {
@@ -18,41 +19,42 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
             <Paper
                 p="xl"
                 radius="xs"
+                withBorder
+                bg="var(--mantine-color-default)"
                 style={{
-                    background: 'var(--mantine-color-default)',
-                    border: '1px solid var(--mantine-color-default-border)',
                     position: 'relative',
                     overflow: 'hidden'
                 }}
             >
-                {/* Decorative Quote Mark */}
-                <Text
-                    style={{
-                        position: 'absolute',
-                        top: -20,
-                        left: 10,
-                        fontSize: '120px',
-                        fontFamily: 'Playfair Display, serif',
-                        color: 'var(--mantine-color-brand-light)',
-                        lineHeight: 1,
-                        userSelect: 'none',
-                        zIndex: 0
-                    }}
-                >
-                    &ldquo;
-                </Text>
-
                 <Stack gap="xl" style={{ position: 'relative', zIndex: 1 }}>
                     <Text
-                        style={{
-                            fontFamily: 'Playfair Display, serif',
-                            fontSize: '1rem',
-                            lineHeight: 1.6,
-                            fontStyle: 'italic',
-                            color: 'var(--mantine-color-text)'
-                        }}
+                        component="blockquote"
+                        ff="Playfair Display, serif"
+                        size="md"
+                        lh={1.6}
+                        fs="italic"
+                        c="text"
+                        style={{ margin: 0, padding: 0 }}
                     >
+                        <ThemeIcon
+                            size={24}
+                            radius=""
+                            variant="transparent"
+                            c="brand"
+                            style={{ display: 'inline-block', verticalAlign: 'text-top', marginRight: 4 }}
+                        >
+                            <IconQuote size={24} style={{ transform: 'rotate(180deg)' }} />
+                        </ThemeIcon>
                         {recommendation.text}
+                        <ThemeIcon
+                            size={24}
+                            radius="xs"
+                            variant="transparent"
+                            c="brand"
+                            style={{ display: 'inline-block', verticalAlign: 'text-top', marginLeft: 4 }}
+                        >
+                            <IconQuote size={24} />
+                        </ThemeIcon>
                     </Text>
 
                     <Group gap="md">
@@ -62,28 +64,23 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
                             radius="xl"
                             imageProps={{ loading: 'lazy' }}
                             alt={recommendation.name}
+                            component="a"
+                            href={recommendation.profileUrl}
+                            target="_blank"
                             style={{ border: '2px solid var(--mantine-color-brand-filled)' }}
                         />
                         <Stack gap={2}>
-                            <Text
-                                fw={500}
-                                style={{
-                                    fontFamily: 'Space Grotesk, sans-serif',
-                                    color: 'var(--mantine-color-text)'
-                                }}
-                            >
+                            <Text fw={500} ff="Space Grotesk, sans-serif" c="text">
                                 {recommendation.name}
                             </Text>
                             <Text
                                 size="xs"
                                 c="dimmed"
                                 tt="uppercase"
-                                style={{
-                                    fontFamily: 'Space Grotesk, sans-serif',
-                                    letterSpacing: '0.5px'
-                                }}
+                                ff="Space Grotesk, sans-serif"
+                                lts={0.5}
                             >
-                                {recommendation.position} at {recommendation.company}
+                                {recommendation.position} @ {recommendation.company}
                             </Text>
                         </Stack>
                     </Group>

@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using PortfolioAPI.Models;
 
 namespace PortfolioAPI.Data;
@@ -6,8 +7,10 @@ public static class DbInitializer
 {
     public static void Initialize(PortfolioContext context)
     {
-        context.Database.EnsureCreated();
+        // Apply any pending migrations
+        context.Database.Migrate();
 
+        // Check if database has already been seeded
         if (context.Projects.Any())
         {
             return;   // DB has been seeded
@@ -91,8 +94,8 @@ public static class DbInitializer
             new Skill { Name = "Microsoft Azure", Category = "Cloud", IconKey = "devicon-azure-plain" },
             new Skill { Name = "Azure App Services", Category = "Cloud", IconKey = "devicon-azure-plain" },
             new Skill { Name = "Azure SQL Database", Category = "Cloud", IconKey = "devicon-azuresqldatabase-plain" },
-            new Skill { Name = "Azure DevOps", Category = "DevOps", IconKey = "si-azuredevops" },
-            new Skill { Name = "CI/CD", Category = "DevOps", IconKey = "si-azurepipelines" },
+            new Skill { Name = "Azure DevOps", Category = "DevOps", IconKey = "devicon-azuredevops-plain" },
+            new Skill { Name = "CI/CD", Category = "DevOps", IconKey = "custom-cicd" },
             new Skill { Name = "Git", Category = "DevOps", IconKey = "devicon-git-plain" },
             new Skill { Name = "GitHub", Category = "DevOps", IconKey = "devicon-github-original" },
             new Skill { Name = "Docker", Category = "DevOps", IconKey = "devicon-docker-plain" },
@@ -100,7 +103,7 @@ public static class DbInitializer
             
             // Methodology & Other
             new Skill { Name = "SCRUM", Category = "Methodology", IconKey = "si-scrumalliance" },
-            new Skill { Name = "Agile", Category = "Methodology", IconKey = "si-agile" },
+            new Skill { Name = "Agile", Category = "Methodology", IconKey = "custom-agile" },
             new Skill { Name = "Web Security", Category = "Security", IconKey = "si-letsencrypt" },
             new Skill { Name = "OWASP", Category = "Security", IconKey = "si-owasp" },
             new Skill { Name = "Koha", Category = "Other", IconKey = "custom-koha" },
@@ -337,7 +340,7 @@ public static class DbInitializer
                 Position = "Product Development Manager/ Brand Marketing", 
                 Company = "tbpsupplytbpsupply",
                 Text = "Jag har haft tillfället att arbeta tillsammans med Maria på Filmstaden, och jag kan varmt rekommendera henne. Maria är en lojal och dedikerad kollega som alltid visar stort ansvar i allt hon gör. Maria har även starka ledaregenskaper. Hon är trygg, strukturerad och får alltid sitt team att känna sig sedda och motiverade. När det uppstår stressiga situationer håller hon sig lugn och lösningsorienterad, vilket gör henne ovärderlig i ett snabbt och dynamiskt arbetsklimat. Hon är pålitlig, arbetsam och en person man alltid kan räkna med. Jag rekommenderar henne helhjärtat för framtida roller.",
-                ProfileImage = "https://media.licdn.com/dms/image/v2/D4D35AQGIiC0rJMLH1A/profile-framedphoto-shrink_400_400/B4DZUZcwTUHIAc-/0/1739888723526?e=1769522400&v=beta&t=RdghAi7MRhuwKsbjzhWrmnFW5-KSOfJ7rc6-wnY8L_0",
+                ProfileImage = "https://media.licdn.com/dms/image/v2/D4D35AQGIiC0rJMLH1A/profile-framedphoto-shrink_400_400/B4DZUZcwTUHIAc-/0/1739888723526?e=1770735600&v=beta&t=rZ7TL7AhquduL4huPeWBmcoJoALanqi_vrff71_q4QM",
                 ProfileUrl = "https://www.linkedin.com/in/sonjaparvizmoradi/"
             }
         };

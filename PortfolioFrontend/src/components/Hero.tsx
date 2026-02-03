@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Title, Text, Container, Box, Group, Badge, Stack } from '@mantine/core';
+import { Title, Text, Container, Box, Group, Badge, Stack, Button } from '@mantine/core';
 
 export function TerminalHero() {
     return (
@@ -46,38 +46,71 @@ export function TerminalHero() {
                 </motion.div>
 
                 {/* Subtitle & Role */}
-                <Group align="flex-start" justify="space-between" mt={20}>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                        <Text
-                            size="xl"
-                            maw={500}
-                            style={{
-                                fontFamily: 'Space Grotesk, sans-serif',
-                                lineHeight: 1.4,
-                                fontWeight: 300
-                            }}
+                <Stack gap={40} mt={20}>
+                    <Group align="flex-start" justify="space-between">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            Specializing in high-performance .NET environments and scalable distributed systems.
-                            Building precision digital tools for the modern web.
-                        </Text>
-                    </motion.div>
+                            <Text
+                                size="xl"
+                                maw={500}
+                                style={{
+                                    fontFamily: 'Space Grotesk, sans-serif',
+                                    lineHeight: 1.4,
+                                    fontWeight: 300
+                                }}
+                            >
+                                Specializing in high-performance .NET environments and scalable distributed systems.
+                                Building precision digital tools for the modern web.
+                            </Text>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                        >
+                            <Stack align="flex-end" gap={5} visibleFrom="sm">
+                                <Badge variant="outline" color="gray" size="lg" radius="sm" tt="lowercase" style={{ fontFamily: 'JetBrains Mono' }}>.net core</Badge>
+                                <Badge variant="outline" color="gray" size="lg" radius="sm" tt="lowercase" style={{ fontFamily: 'JetBrains Mono' }}>azure</Badge>
+                                <Badge variant="outline" color="gray" size="lg" radius="sm" tt="lowercase" style={{ fontFamily: 'JetBrains Mono' }}>architecture</Badge>
+                            </Stack>
+                        </motion.div>
+                    </Group>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.8 }}
                     >
-                        <Stack align="flex-end" gap={5} visibleFrom="sm">
-                            <Badge variant="outline" color="gray" size="lg" radius="sm" tt="lowercase" style={{ fontFamily: 'JetBrains Mono' }}>.net core</Badge>
-                            <Badge variant="outline" color="gray" size="lg" radius="sm" tt="lowercase" style={{ fontFamily: 'JetBrains Mono' }}>azure</Badge>
-                            <Badge variant="outline" color="gray" size="lg" radius="sm" tt="lowercase" style={{ fontFamily: 'JetBrains Mono' }}>architecture</Badge>
-                        </Stack>
+                        <Group gap="md">
+                            <Button
+                                component="a"
+                                href="#works"
+                                size="lg"
+                                radius="xs"
+                                variant="filled"
+                                color="var(--mantine-color-brand-filled)"
+                                style={{ fontFamily: 'Space Grotesk' }}
+                            >
+                                Selected Works
+                            </Button>
+                            <Button
+                                component="a"
+                                href="mailto:maria.toledo.silva@outlook.com"
+                                size="lg"
+                                radius="xs"
+                                variant="outline"
+                                color="gray"
+                                style={{ fontFamily: 'Space Grotesk' }}
+                            >
+                                Get in Touch
+                            </Button>
+                        </Group>
                     </motion.div>
-                </Group>
+                </Stack>
             </Stack>
         </Container>
     );
