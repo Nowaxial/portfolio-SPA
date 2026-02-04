@@ -109,6 +109,8 @@ public static class DbInitializer
             // Methodology & Other
             new Skill { Name = "SCRUM", Category = "Methodology", IconKey = "si-scrumalliance" },
             new Skill { Name = "Agile", Category = "Methodology", IconKey = "custom-agile" },
+            new Skill { Name = "Secure System Design", Category = "Security", IconKey = "si-letsencrypt" },
+            new Skill { Name = "Conflict Resolution", Category = "Methodology", IconKey = "custom-agile" },
             new Skill { Name = "Web Security", Category = "Security", IconKey = "si-letsencrypt" },
             new Skill { Name = "OWASP", Category = "Security", IconKey = "si-owasp" },
             new Skill { Name = "Koha", Category = "Other", IconKey = "custom-koha" },
@@ -347,12 +349,149 @@ public static class DbInitializer
                 Text = "Jag har haft tillfället att arbeta tillsammans med Maria på Filmstaden, och jag kan varmt rekommendera henne. Maria är en lojal och dedikerad kollega som alltid visar stort ansvar i allt hon gör. Maria har även starka ledaregenskaper. Hon är trygg, strukturerad och får alltid sitt team att känna sig sedda och motiverade. När det uppstår stressiga situationer håller hon sig lugn och lösningsorienterad, vilket gör henne ovärderlig i ett snabbt och dynamiskt arbetsklimat. Hon är pålitlig, arbetsam och en person man alltid kan räkna med. Jag rekommenderar henne helhjärtat för framtida roller.",
                 ProfileImage = "https://media.licdn.com/dms/image/v2/D4D35AQGIiC0rJMLH1A/profile-framedphoto-shrink_400_400/B4DZUZcwTUHIAc-/0/1739888723526?e=1770735600&v=beta&t=rZ7TL7AhquduL4huPeWBmcoJoALanqi_vrff71_q4QM",
                 ProfileUrl = "https://www.linkedin.com/in/sonjaparvizmoradi/"
+            },
+            new Recommendation { 
+                Name = "Micheal Ulasi", 
+                Position = "Technical Lead / Supervisor", 
+                Company = "Swedcon18",
+                Text = "Maria has solved her tasks quickly and securely. She knows a lot already and keeps learning, which is the best recommendation. Very conscientious and reliable. She has a very great ability to handle different demands and changing priorities.",
+                ProfileImage = null, // Placeholder or need user input
+                ProfileUrl = "https://www.linkedin.com/in/michealulasi/"
+            },
+            new Recommendation { 
+                Name = "Daniel Gustavsson", 
+                Position = "Technical Lead / Supervisor", 
+                Company = "WebWin AB",
+                Text = "Maria har en mycket stor förmåga att samarbeta och lyssna, och kan med lätthet framföra egna synpunkter på ett smidigt sätt. Hon har utfört sitt arbete samvetsgrant och grundligt, även då uppgiften varit mindre inspirerande. Maria har en god förmåga att hantera olika krav och växlande prioriteringar, och agerar alltid resultatinriktat och aktivt.",
+                ProfileImage = null,
+                ProfileUrl = "https://www.linkedin.com/in/daniel-gustavsson-systemansvarig-chronox/"
             }
         };
 
         foreach (Recommendation r in recommendations)
         {
             context.Recommendations.Add(r);
+        }
+        context.SaveChanges();
+
+        // ===== TRANSLATIONS =====
+        var translations = new Translation[]
+        {
+            // English
+            new Translation { Key = "Hero.Title", LanguageCode = "en", Value = "Security-Oriented System Developer" },
+            new Translation { Key = "Hero.Subtitle", LanguageCode = "en", Value = "Architecting robust .NET solutions with a foundation in secure Fullstack development. I bridge the gap between technical complexity and human needs with a \"Secure by Design\" philosophy." },
+            new Translation { Key = "Hero.SystemOnline", LanguageCode = "en", Value = "System Online" },
+            new Translation { Key = "Hero.BasedIn", LanguageCode = "en", Value = "Based in Sweden" },
+            new Translation { Key = "Hero.SelectedWorks", LanguageCode = "en", Value = "Selected Works" },
+            new Translation { Key = "Hero.GetInTouch", LanguageCode = "en", Value = "Get in Touch" },
+            new Translation { Key = "Nav.Works", LanguageCode = "en", Value = "Works" },
+            new Translation { Key = "Nav.Skills", LanguageCode = "en", Value = "Skills" },
+            new Translation { Key = "Nav.Recommendations", LanguageCode = "en", Value = "Recommendations" },
+            new Translation { Key = "Nav.Socials", LanguageCode = "en", Value = "Socials" },
+            new Translation { Key = "Nav.Menu", LanguageCode = "en", Value = "Menu" },
+            new Translation { Key = "Section.ProfessionalSummary", LanguageCode = "en", Value = "Professional Summary" },
+            new Translation { Key = "Section.SelectedWorks", LanguageCode = "en", Value = "Selected Works" },
+
+            new Translation { Key = "Section.TechnicalStack", LanguageCode = "en", Value = "Technical Stack" },
+            new Translation { Key = "Badge.SystemActive", LanguageCode = "en", Value = "System Active" },
+            new Translation { Key = "Badge.Endorsements", LanguageCode = "en", Value = "Endorsements" },
+            new Translation { Key = "Section.Recommendations", LanguageCode = "en", Value = "Recommendations" },
+
+            // ProfileCard
+            new Translation { Key = "Profile.DownloadCV", LanguageCode = "en", Value = "Download CV" },
+            new Translation { Key = "Profile.LinkedInTooltip", LanguageCode = "en", Value = "LinkedIn Profile" },
+            new Translation { Key = "Profile.GitHubTooltip", LanguageCode = "en", Value = "GitHub Profile" },
+            new Translation { Key = "Profile.EmailTooltip", LanguageCode = "en", Value = "Email Me" },
+            new Translation { Key = "Profile.Role", LanguageCode = "en", Value = "Security-Oriented System Developer" },
+            new Translation { Key = "Profile.Quote", LanguageCode = "en", Value = "With a track record of bridging technical systems and human needs—from cinema projections to .NET architectures—I build resilient applications you can trust. My background in Web Security and Fullstack development ensures every solution is \"Secure by Design.\"" },
+            new Translation { Key = "Profile.Status", LanguageCode = "en", Value = "Ready for collaboration" },
+
+            // ProjectCard
+            new Translation { Key = "Project.PreviewModel", LanguageCode = "en", Value = "Preview Model" },
+            new Translation { Key = "Project.ViewOnGitHub", LanguageCode = "en", Value = "View on GitHub" },
+            new Translation { Key = "Project.VisitLiveSite", LanguageCode = "en", Value = "Visit Live Site" },
+
+            // Swedish ProfileCard
+            new Translation { Key = "Profile.DownloadCV", LanguageCode = "sv", Value = "Ladda ner CV" },
+            new Translation { Key = "Profile.LinkedInTooltip", LanguageCode = "sv", Value = "LinkedIn Profil" },
+            new Translation { Key = "Profile.GitHubTooltip", LanguageCode = "sv", Value = "GitHub Profil" },
+            new Translation { Key = "Profile.EmailTooltip", LanguageCode = "sv", Value = "Maila mig" },
+            new Translation { Key = "Profile.Status", LanguageCode = "sv", Value = "Redo för samarbete" },
+            new Translation { Key = "Profile.Role", LanguageCode = "sv", Value = "Säkerhetsinriktad Systemutvecklare" },
+            new Translation { Key = "Profile.Quote", LanguageCode = "sv", Value = "Med erfarenhet av att överbrygga tekniska system och mänskliga behov – från biografprojektion till .NET-arkitektur – bygger jag robusta applikationer du kan lita på. Min bakgrund inom webbsäkerhet och Fullstack-utveckling säkerställer att varje lösning är \"Secure by Design\"." },
+
+            // Swedish ProjectCard
+            new Translation { Key = "Project.PreviewModel", LanguageCode = "sv", Value = "Förhandsgranska modell" },
+            new Translation { Key = "Project.ViewOnGitHub", LanguageCode = "sv", Value = "Visa på GitHub" },
+            new Translation { Key = "Project.VisitLiveSite", LanguageCode = "sv", Value = "Besök webbplats" },
+
+            // Swedish
+            new Translation { Key = "Hero.Title", LanguageCode = "sv", Value = "Säkerhetsinriktad Systemutvecklare" },
+            new Translation { Key = "Hero.Subtitle", LanguageCode = "sv", Value = "Utformar robusta .NET-lösningar med en grund inom säker Fullstack-utveckling. Jag överbryggar klyftan mellan teknisk komplexitet och mänskliga behov med en \"Secure by Design\"-filosofi." },
+            new Translation { Key = "Hero.SystemOnline", LanguageCode = "sv", Value = "System Online" },
+            new Translation { Key = "Hero.BasedIn", LanguageCode = "sv", Value = "Baserad i Sverige" },
+            new Translation { Key = "Hero.SelectedWorks", LanguageCode = "sv", Value = "Utvalda Projekt" },
+            new Translation { Key = "Hero.GetInTouch", LanguageCode = "sv", Value = "Kontakta Mig" },
+            new Translation { Key = "Nav.Works", LanguageCode = "sv", Value = "Projekt" },
+            new Translation { Key = "Nav.Skills", LanguageCode = "sv", Value = "Färdigheter" },
+            new Translation { Key = "Nav.Recommendations", LanguageCode = "sv", Value = "Rekommendationer" },
+            new Translation { Key = "Nav.Socials", LanguageCode = "sv", Value = "Sociala Medier" },
+            new Translation { Key = "Nav.Menu", LanguageCode = "sv", Value = "Meny" },
+            new Translation { Key = "Section.ProfessionalSummary", LanguageCode = "sv", Value = "Professionell Sammanfattning" },
+            new Translation { Key = "Section.SelectedWorks", LanguageCode = "sv", Value = "Utvalda Projekt" },
+            new Translation { Key = "Section.TechnicalStack", LanguageCode = "sv", Value = "Teknisk Stack" },
+            new Translation { Key = "Badge.SystemActive", LanguageCode = "sv", Value = "System Aktivt" },
+            new Translation { Key = "Badge.Endorsements", LanguageCode = "sv", Value = "Omdömen" },
+            new Translation { Key = "Section.Recommendations", LanguageCode = "sv", Value = "Rekommendationer" },
+            // Recommendations
+            new Translation { Key = "Recommendation.1.Text", LanguageCode = "en", Value = "Over the past few years, Maria has assisted us on various occasions with private issues involving TVs, computers, and phones. We are very impressed by both the breadth and depth of her knowledge. There hasn't been a single problem she hasn't managed to solve yet. Two particularly challenging examples are problems with the TV broadcast. Telia could not help us by phone. They sent a consultant who came and charged us. An hour after the consultant left, the problem was back. Maria solved this in 15 minutes and the problem did not return. Two years ago I made a photobook. Wanted to order more now but couldn't find it. Customer service said it was on my old laptop and since it was discarded, the book could not be ordered without being recreated from scratch. Same answer from 3 different people at customer support. When I ask Maria for help, it doesn't take long before she finds the photobook. Maria has very high competence within the different areas we needed help with and we give her our very best recommendations." },
+            new Translation { Key = "Recommendation.1.Text", LanguageCode = "sv", Value = "De senaste åren har Maria vid olika tillfällen varit oss behjälplig med privata problem med TV, datorer och telefon. Vi är mycket imponerade över både bredd och djup i hennes kunskaper. Det har ännu inte varit något problem som hon inte lyckats lösa. Två särskilt utmanande exempel är problem med TV sändningen. Telia kunde inte hjälpa oss på telefon. De skickade en konsult som kom och debiterade. En timma efter konsulten lämnat så var problemet tillbaka. Maria löste detta på 15 min och problemet kom inte tillbaka. För två år sedan gjorde jag en fotobok. Ville nu beställa fler men hittade den inte. Kundservice sa att den fanns på min gamla laptop och eftersom den var kasserad så gick boken inte att beställa utan att den skulle återskapas på nytt. Samma besked av 3 olika personer på kundsupport. När jag ber Maria om hjälp tar det inte lång stund innan hon hittar fotoboken. Vi tycker att Maria har mycket hög kompetens inom de olika områden som vi behövt hjälp med och vi ger henne de allra bästa rekommendationer." },
+            
+
+            new Translation { Key = "Recommendation.2.Text", LanguageCode = "en", Value = "I have had the opportunity to work together with Maria at Filmstaden, and I can warmly recommend her. Maria is a loyal and dedicated colleague who always shows great responsibility in everything she does. Maria also has strong leadership qualities. She is confident, structured, and always makes her team feel seen and motivated. When stressful situations arise, she stays calm and solution-oriented, which makes her invaluable in a fast and dynamic work environment. She is reliable, hardworking, and a person you can always count on. I recommend her wholeheartedly for future roles." },
+            new Translation { Key = "Recommendation.2.Text", LanguageCode = "sv", Value = "Jag har haft tillfället att arbeta tillsammans med Maria på Filmstaden, och jag kan varmt rekommendera henne. Maria är en lojal och dedikerad kollega som alltid visar stort ansvar i allt hon gör. Maria har även starka ledaregenskaper. Hon är trygg, strukturerad och får alltid sitt team att känna sig sedda och motiverade. När det uppstår stressiga situationer håller hon sig lugn och lösningsorienterad, vilket gör henne ovärderlig i ett snabbt och dynamiskt arbetsklimat. Hon är pålitlig, arbetsam och en person man alltid kan räkna med. Jag rekommenderar henne helhjärtat för framtida roller." },
+
+            new Translation { Key = "Recommendation.3.Text", LanguageCode = "en", Value = "Maria solved her tasks quickly and securely. She knows a lot already and keep learning is the best recommendation. Very conscientious and reliable. She has a very great ability to handle different demands and changing priorities. She initiates and implements efficiencies to better achieve set goals." },
+            new Translation { Key = "Recommendation.3.Text", LanguageCode = "sv", Value = "Maria löste sina uppgifter snabbt och säkert. Hon har redan stora kunskaper och fortsätter att lära sig. Mycket samvetsgrann och pålitlig. Hon har en mycket god förmåga att hantera olika krav och växlande prioriteringar. Hon initierar och genomför effektiviseringar för att bättre nå uppsatta mål." },
+
+            new Translation { Key = "Recommendation.4.Text", LanguageCode = "en", Value = "Maria has a very great ability to collaborate and listen, and she can easily present her own views in a smooth way. She has performed her work conscientiously and thoroughly, even when tasks were less inspiring. Maria has a good ability to handle different demands and changing priorities, always acting result-oriented and actively." },
+            new Translation { Key = "Recommendation.4.Text", LanguageCode = "sv", Value = "Maria har en mycket stor förmåga att samarbeta och lyssna, och kan med lätthet framföra egna synpunkter på ett smidigt sätt. Hon har utfört sitt arbete samvetsgrant och grundligt, även då uppgiften varit mindre inspirerande. Maria har en god förmåga att hantera olika krav och växlande prioriteringar, och agerar alltid resultatinriktat och aktivt." },
+
+            // Project 1: Editorial Tech Portfolio
+            new Translation { Key = "Project.1.Title", LanguageCode = "en", Value = "Editorial Tech Portfolio" },
+            new Translation { Key = "Project.1.Description", LanguageCode = "en", Value = "High-performance and architecturally thoughtful portfolio built with Astro 5 and React 19. The system uses a decoupled architecture with a robust .NET 10 Web API backend, EF Core, and SQLite. The design follows an 'Editorial Tech' aesthetic focusing on precision, typography, and system transparency." },
+            new Translation { Key = "Project.1.Title", LanguageCode = "sv", Value = "Editorial Tech Portfolio" },
+            new Translation { Key = "Project.1.Description", LanguageCode = "sv", Value = "Högpresterande och arkitektoniskt genomtänkt portfolio byggd med Astro 5 och React 19. Systemet använder en frikopplad arkitektur med en robust .NET 10 Web API backend, EF Core och SQLite. Designen följer en 'Editorial Tech' estetik med fokus på precision, typografi och systemtransparens." },
+
+             // Updated Profile and About
+             
+            new Translation { Key = "Summary.Title", LanguageCode = "en", Value = "Reliability & Security" },
+            new Translation { Key = "Summary.Title", LanguageCode = "sv", Value = "Pålitlighet & Säkerhet" },
+            new Translation { Key = "Summary.Text", LanguageCode = "en", Value = "From troubleshooting cinema projectors to architecting .NET APIs, I have always been the person who ensures the system stays online. My background in Network Security combined with modern .NET development allows me to build robust, secure, and user-centric applications." },
+            new Translation { Key = "Summary.Text", LanguageCode = "sv", Value = "Från felsökning av biografprojektorer till arkitektur av .NET API:er har jag alltid varit personen som ser till att systemet är igång. Min bakgrund inom nätverkssäkerhet kombinerat med modern .NET-utveckling gör att jag kan bygga robusta, säkra och användarcentrerade applikationer." },
+
+            // Project 2: DevShowCase Platform
+            new Translation { Key = "Project.2.Title", LanguageCode = "en", Value = "DevShowCase Platform" },
+            new Translation { Key = "Project.2.Description", LanguageCode = "en", Value = "Developer platform built on Blazor WebAssembly and ASP.NET Core with clean layer separation. Comprehensive API supporting Competencies, Education, Licenses, and Tech Stacks. Full user management via ASP.NET Core Identity with secure login and profile systems. Optimized code sharing between frontend and backend via Shared projects. Advanced logging with Serilog and documentation via Swagger UI." },
+            new Translation { Key = "Project.2.Title", LanguageCode = "sv", Value = "DevShowCase Platform" },
+            new Translation { Key = "Project.2.Description", LanguageCode = "sv", Value = "Plattform för utvecklare byggd på Blazor WebAssembly och ASP.NET Core med ren separation av lager. Omfattande API med stöd för hantering av Competencies, Education, Licenses och Tech Stacks. Fullständig användarhantering via ASP.NET Core Identity med säkra inloggnings- och profilsystem. Optimerad koddelning mellan frontend och backend genom Shared-projekt. Avancerad loggning med Serilog och dokumentation via Swagger UI." },
+
+            // Project 3: Lexicon FullStack LMS
+            new Translation { Key = "Project.3.Title", LanguageCode = "en", Value = "Lexicon FullStack LMS (SimpliLearn)" },
+            new Translation { Key = "Project.3.Description", LanguageCode = "en", Value = "Group project: LMS with advanced feedback system for teachers and students. Further development (Solo): Migrated entire architecture to Azure. Cloud-based storage via Azure Blob Storage and secured API communication with JWT tokens. Full CI/CD pipeline and deployment to Azure App Service. Intelligent notification system filtering events based on course and role permissions." },
+            new Translation { Key = "Project.3.Title", LanguageCode = "sv", Value = "Lexicon FullStack LMS (SimpliLearn)" },
+            new Translation { Key = "Project.3.Description", LanguageCode = "sv", Value = "Gruppprojekt: LMS med avancerat feedback-system för lärare och studenter. Vidareutveckling (Solo): Migrerade hela arkitekturen till Azure för skarp drift. Molnbaserad lagring via Azure Blob Storage och säkrad API-kommunikation med JWT-tokens. Fullständig CI/CD-pipeline och driftsättning till Azure App Service. Intelligent notifieringssystem som filtrerar händelser baserat på kurs- och rollbehörighet." },
+
+            // Project 4: Computer Inventory API
+            new Translation { Key = "Project.4.Title", LanguageCode = "en", Value = "Computer Inventory API" },
+            new Translation { Key = "Project.4.Description", LanguageCode = "en", Value = "REST API in ASP.NET Core for structured management of IT inventory and hardware. Integrated Bogus to generate and validate the system with large-scale, realistic test data. CRUD operations focusing on data security and clear API documentation via Swagger." },
+            new Translation { Key = "Project.4.Title", LanguageCode = "sv", Value = "Computer Inventory API" },
+            new Translation { Key = "Project.4.Description", LanguageCode = "sv", Value = "REST API i ASP.NET Core för strukturerad hantering av IT-inventarier och hårdvara. Integrerade Bogus för att generera och validera systemet med storskalig, realistisk testdata. CRUD-operationer med fokus på datasäkerhet och tydlig API-dokumentation via Swagger." }
+        };
+
+        foreach (Translation t in translations)
+        {
+            context.Translations.Add(t);
         }
 
         context.SaveChanges();

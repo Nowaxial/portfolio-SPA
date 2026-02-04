@@ -16,4 +16,5 @@ public class PortfolioContext : DbContext
     public DbSet<Education> Educations { get; set; } = null!;
     public DbSet<Certificate> Certificates { get; set; } = null!;
     public DbSet<Recommendation> Recommendations { get; set; } = null!;
+    public DbSet<Translation> Translations { get; set; } = null!;
 }

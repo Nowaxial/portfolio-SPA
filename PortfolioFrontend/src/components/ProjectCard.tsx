@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card, Text, Badge, Group, ActionIcon, Box, Title } from '@mantine/core';
+import { Card, Text, Badge, Group, ActionIcon, Box, Title, Tooltip } from '@mantine/core';
 import { IconBrandGithub, IconArrowUpRight, IconPhoto } from '@tabler/icons-react';
 import type { Project } from '../types';
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
+import { useTranslation } from './TranslationContext';
+
 export function ProjectCard({ project }: { project: Project }) {
+    const { t } = useTranslation();
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -36,7 +39,7 @@ export function ProjectCard({ project }: { project: Project }) {
                 <Box>
                     <Group justify="space-between" align="flex-start" mb="md">
                         <Title order={3} style={{ fontFamily: 'Playfair Display, serif', fontWeight: 500, fontStyle: 'italic' }}>
-                            {project.title}
+                            {t(`Project.${project.id}.Title`) || project.title}
                         </Title>
                         <Group gap={8}>
                             {project.githubUrl && (
@@ -46,7 +49,7 @@ export function ProjectCard({ project }: { project: Project }) {
                                     component="a"
                                     href={project.githubUrl}
                                     target="_blank"
-                                    aria-label={`View ${project.title} on GitHub`}
+                                    aria-label={t('Project.ViewOnGitHub')}
                                 >
                                     <IconBrandGithub size={18} />
                                 </ActionIcon>
@@ -58,7 +61,7 @@ export function ProjectCard({ project }: { project: Project }) {
                                     component="a"
                                     href={project.liveUrl}
                                     target="_blank"
-                                    aria-label={`Visit ${project.title} live site`}
+                                    aria-label={t('Project.VisitLiveSite')}
                                 >
                                     <IconArrowUpRight size={18} />
                                 </ActionIcon>
@@ -67,7 +70,7 @@ export function ProjectCard({ project }: { project: Project }) {
                     </Group>
 
                     <Text size="sm" c="dimmed" mb="xl" style={{ lineHeight: 1.7, fontFamily: 'Space Grotesk' }}>
-                        {project.description}
+                        {t(`Project.${project.id}.Description`) || project.description}
                     </Text>
                 </Box>
 
@@ -131,7 +134,7 @@ export function ProjectCard({ project }: { project: Project }) {
                                 >
                                     <Group gap={8} style={{ color: 'white', backgroundColor: 'rgba(0,0,0,0.5)', padding: '8px 16px', borderRadius: '20px' }}>
                                         <IconPhoto size={16} />
-                                        <Text size="xs" fw={700} tt="uppercase" lts={1}>Preview Model</Text>
+                                        <Text size="xs" fw={700} tt="uppercase" lts={1}>{t('Project.PreviewModel')}</Text>
                                     </Group>
                                 </motion.div>
                             </Box>

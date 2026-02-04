@@ -9,6 +9,7 @@ import { ProfileCard } from './ProfileCard';
 import { TechIcon } from './TechIcon';
 import { fetchProjects, fetchSkills, fetchRecommendations } from '../lib/api';
 import type { Project, Skill, Recommendation } from '../types';
+import { useTranslation } from './TranslationContext';
 
 interface PortfolioContentProps {
     projects: Project[];
@@ -17,6 +18,7 @@ interface PortfolioContentProps {
 }
 
 export function PortfolioContent({ projects: initialProjects, skills: initialSkills, recommendations: initialRecommendations }: PortfolioContentProps) {
+    const { t } = useTranslation();
     const [projects, setProjects] = useState<Project[]>(initialProjects);
     const [skills, setSkills] = useState<Skill[]>(initialSkills);
     const [recommendations, setRecommendations] = useState<Recommendation[]>(initialRecommendations);
@@ -103,18 +105,16 @@ export function PortfolioContent({ projects: initialProjects, skills: initialSki
                         <Grid.Col span={{ base: 12, md: 8 }}>
                             <Box mb={80}>
                                 <Title order={2} mb={30} fw={500} fz={32}>
-                                    Professional Summary
+                                    {t('Section.ProfessionalSummary')}
                                 </Title>
                                 <Text size="lg" lh={1.6} fw={300} c="dimmed">
-                                    Software Architect and System Engineer with a focus on high-performance .NET environments.
-                                    Expert in building scalable distributed systems, precision digital tools, and future-proof architectures.
-                                    Committed to the seamless intersection of robust backend data and elegant user experiences.
+                                    {t('Summary.Text')}
                                 </Text>
                             </Box>
 
                             <Box mb={80} id="works">
                                 <Title order={2} mb={40} fw={500} fz={32}>
-                                    Selected Works
+                                    {t('Section.SelectedWorks')}
                                 </Title>
                                 <Grid gutter="xl">
                                     {projects.map(project => (
@@ -128,9 +128,9 @@ export function PortfolioContent({ projects: initialProjects, skills: initialSki
                             <Box mb={80}>
                                 <Group align="center" mb={30} gap={15} id="skills">
                                     <Title order={2} fw={500} fz={32}>
-                                        Technical Stack
+                                        {t('Section.TechnicalStack')}
                                     </Title>
-                                    <Badge variant="dot" color="green" size="lg" radius="xs">System Active</Badge>
+                                    <Badge variant="dot" color="green" size="lg" radius="xs">{t('Badge.SystemActive')}</Badge>
                                 </Group>
 
                                 <Stack gap="xl">
@@ -162,9 +162,9 @@ export function PortfolioContent({ projects: initialProjects, skills: initialSki
                             <Box id="endorsements">
                                 <Group align="center" mb={40} gap={15}>
                                     <Title order={2} fw={500} fz={32}>
-                                        Recommendations
+                                        {t('Section.Recommendations')}
                                     </Title>
-                                    <Badge variant="outline" color="indigo" size="sm" radius="xs" tt="uppercase">Endorsements</Badge>
+                                    <Badge variant="outline" color="indigo" size="sm" radius="xs" tt="uppercase">{t('Badge.Endorsements')}</Badge>
                                 </Group>
                                 <Stack gap="xl">
                                     {recommendations.map(rec => (

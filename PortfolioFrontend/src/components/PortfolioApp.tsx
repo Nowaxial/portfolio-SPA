@@ -12,6 +12,8 @@ interface PortfolioAppProps {
 }
 
 import { Header } from './Header';
+import { LanguageToggle } from './LanguageToggle';
+import { TranslationProvider } from './TranslationContext';
 
 export function PortfolioApp({ projects, skills, recommendations }: PortfolioAppProps) {
     useEffect(() => {
@@ -26,12 +28,15 @@ export function PortfolioApp({ projects, skills, recommendations }: PortfolioApp
     }, []);
 
     return (
-        <ThemeProvider>
-            <Header />
-            <PortfolioContent projects={projects} skills={skills} recommendations={recommendations} />
-            <Footer />
-            <ColorSchemeToggle />
-        </ThemeProvider>
+        <TranslationProvider>
+            <ThemeProvider>
+                <Header />
+                <PortfolioContent projects={projects} skills={skills} recommendations={recommendations} />
+                <Footer />
+                <ColorSchemeToggle />
+                <LanguageToggle />
+            </ThemeProvider>
+        </TranslationProvider>
     );
 }
 

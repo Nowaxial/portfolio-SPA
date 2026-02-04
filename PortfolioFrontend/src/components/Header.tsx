@@ -1,16 +1,19 @@
 import { Container, Group, Text, Burger, Drawer, Stack, Box, UnstyledButton, rem, useMantineTheme, ActionIcon, useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconBrandLinkedin, IconBrandGithub, IconMail, IconSun, IconMoon } from '@tabler/icons-react';
-
-const navLinks = [
-    { label: 'Top', href: '#top' },
-    { label: 'Works', href: '#works' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Recommendations', href: '#endorsements' },
-];
+import { LanguageToggle } from './LanguageToggle';
+import { useTranslation } from './TranslationContext';
 
 export function Header() {
+    const { t } = useTranslation();
     const [opened, { toggle, close }] = useDisclosure(false);
+
+    const navLinks = [
+        { label: 'Top', href: '#top' },
+        { label: t('Nav.Works'), href: '#works' },
+        { label: t('Nav.Skills'), href: '#skills' },
+        { label: t('Nav.Recommendations'), href: '#endorsements' },
+    ];
     const theme = useMantineTheme();
     const { setColorScheme } = useMantineColorScheme();
     const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
@@ -86,9 +89,11 @@ export function Header() {
                                 )}
                             </ActionIcon>
 
+                            <LanguageToggle mini />
+
                             <Group gap={4}>
-                                <Text size="xs" tt="uppercase" fw={700} c="dimmed" variant="gradient"
-                                    gradient={{ from: 'brand.3', to: 'brand.5', deg: 45 }} style={{ letterSpacing: '1px', fontFamily: 'Playfair Display, serif', userSelect: 'none' }}>Menu</Text>
+                                <Text size="sm" tt="uppercase" fw={700} c="dimmed" variant="gradient"
+                                    gradient={{ from: 'brand.3', to: 'brand.5', deg: 45 }} style={{ letterSpacing: '1px', fontFamily: 'Playfair Display, serif', userSelect: 'none' }}>{t('Nav.Menu')}</Text>
                                 <Burger
                                     opened={opened}
                                     onClick={toggle}
@@ -165,7 +170,7 @@ export function Header() {
 
                 <Box mt={rem(80)} p="md">
                     <Text size="xs" fw={700} tt="uppercase" c="dimmed" lts={2} mb="xl">
-                        Socials
+                        {t('Nav.Socials')}
                     </Text>
                     <Group gap="xl">
                         <UnstyledButton component="a" href="https://www.linkedin.com/in/mariatoledosilva/" style={{ display: 'flex', alignItems: 'center', gap: rem(8) }}>

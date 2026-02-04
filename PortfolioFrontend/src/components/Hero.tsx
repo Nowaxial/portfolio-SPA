@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Title, Text, Container, Box, Group, Badge, Stack, Button } from '@mantine/core';
+import { useTranslation } from './TranslationContext';
 
 export function TerminalHero() {
+    const { t } = useTranslation();
     return (
         <Container size="lg" py={{ base: 60, md: 100 }} id="hero">
             <Stack gap={30}>
@@ -15,10 +17,10 @@ export function TerminalHero() {
                     <Group justify="space-between" align="center" style={{ borderBottom: '1px solid var(--mantine-color-default-border)', paddingBottom: '20px' }}>
                         <Group gap={10}>
                             <Box w={8} h={8} style={{ borderRadius: '50%', background: 'var(--mantine-color-brand-filled)' }} />
-                            <Text fz="xs" fw={700} tt="uppercase" style={{ letterSpacing: '1px' }}>System Online</Text>
+                            <Text fz="xs" fw={700} tt="uppercase" style={{ letterSpacing: '1px' }}>{t('Hero.SystemOnline')}</Text>
                         </Group>
                         <Group gap={20} visibleFrom="sm">
-                            <Text fz="xs" c="dimmed" tt="uppercase">Based in Sweden</Text>
+                            <Text fz="xs" c="dimmed" tt="uppercase">{t('Hero.BasedIn')}</Text>
                             <Text fz="xs" c="dimmed" tt="uppercase">UTC+1</Text>
                         </Group>
                     </Group>
@@ -40,8 +42,7 @@ export function TerminalHero() {
                             letterSpacing: '-0.02em',
                         }}
                     >
-                        Architecture <br />
-                        <span style={{ fontStyle: 'italic', color: 'var(--mantine-color-brand-filled)' }}>System</span> Engineer
+                        {t('Hero.Title')}
                     </Title>
                 </motion.div>
 
@@ -62,8 +63,7 @@ export function TerminalHero() {
                                     fontWeight: 300
                                 }}
                             >
-                                Specializing in high-performance .NET environments and scalable distributed systems.
-                                Building precision digital tools for the modern web.
+                                {t('Hero.Subtitle')}
                             </Text>
                         </motion.div>
 
@@ -95,7 +95,7 @@ export function TerminalHero() {
                                 color="var(--mantine-color-brand-filled)"
                                 style={{ fontFamily: 'Space Grotesk' }}
                             >
-                                Selected Works
+                                {t('Hero.SelectedWorks')}
                             </Button>
                             <Button
                                 component="a"
@@ -106,7 +106,7 @@ export function TerminalHero() {
                                 color="gray"
                                 style={{ fontFamily: 'Space Grotesk' }}
                             >
-                                Get in Touch
+                                {t('Hero.GetInTouch')}
                             </Button>
                         </Group>
                     </motion.div>

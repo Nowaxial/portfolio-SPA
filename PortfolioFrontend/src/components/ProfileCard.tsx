@@ -1,8 +1,10 @@
 import React from 'react';
 import { Box, Avatar, Text, Stack, Title, Group, Paper, Divider, Button, ActionIcon, Tooltip } from '@mantine/core';
 import { IconBrandLinkedin, IconBrandGithub, IconMail, IconDownload } from '@tabler/icons-react';
+import { useTranslation } from './TranslationContext';
 
 export function ProfileCard() {
+    const { t } = useTranslation();
     return (
         <Paper
             p="xl"
@@ -33,7 +35,7 @@ export function ProfileCard() {
                         Maria Toledo
                     </Title>
                     <Text size="xs" tt="uppercase" c="dimmed" fw={700} mt={4} lts={1}>
-                        Software Architect
+                        {t('Profile.Role')}
                     </Text>
                 </Box>
 
@@ -41,7 +43,7 @@ export function ProfileCard() {
 
                 <Box>
                     <Text size="sm" c="dimmed" lh={1.6} fs="italic">
-                        "I believe in building systems that are not just functional, but architecturally sound and future-proof. My focus is on precision, performance, and the seamless intersection of design and data."
+                        {t('Profile.Quote')}
                     </Text>
                 </Box>
 
@@ -56,11 +58,11 @@ export function ProfileCard() {
                         radius="xs"
                         fullWidth
                     >
-                        Download CV
+                        {t('Profile.DownloadCV')}
                     </Button>
 
                     <Group justify="center" gap="md">
-                        <Tooltip label="LinkedIn Profile" withArrow>
+                        <Tooltip label={t('Profile.LinkedInTooltip')} withArrow>
                             <ActionIcon
                                 component="a"
                                 href="https://www.linkedin.com/in/mariatoledosilva/"
@@ -74,7 +76,7 @@ export function ProfileCard() {
                             </ActionIcon>
                         </Tooltip>
 
-                        <Tooltip label="GitHub Profile" withArrow>
+                        <Tooltip label={t('Profile.GitHubTooltip')} withArrow>
                             <ActionIcon
                                 component="a"
                                 href="https://github.com/Nowaxial"
@@ -88,7 +90,7 @@ export function ProfileCard() {
                             </ActionIcon>
                         </Tooltip>
 
-                        <Tooltip label="Email Me" withArrow>
+                        <Tooltip label={t('Profile.EmailTooltip')} withArrow>
                             <ActionIcon
                                 component="a"
                                 href="mailto:maria.toledo.silva@outlook.com"
@@ -106,7 +108,7 @@ export function ProfileCard() {
                 <Group gap="xs" mt={5}>
                     <Box w={8} h={8} style={{ borderRadius: '50%', background: 'var(--mantine-color-brand-filled)' }} />
                     <Text size="xs" fw={700} tt="uppercase" lts={0.5}>
-                        Ready for collaboration
+                        {t('Profile.Status')}
                     </Text>
                 </Group>
             </Stack>

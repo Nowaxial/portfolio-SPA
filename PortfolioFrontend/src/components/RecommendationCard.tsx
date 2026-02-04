@@ -3,12 +3,19 @@ import { Box, Text, Avatar, Group, Stack, Paper, ThemeIcon } from '@mantine/core
 import { motion } from 'framer-motion';
 import { IconQuote } from '@tabler/icons-react';
 import type { Recommendation } from '../types';
+import { useTranslation } from './TranslationContext';
 
 interface RecommendationCardProps {
     recommendation: Recommendation;
 }
 
 export function RecommendationCard({ recommendation }: RecommendationCardProps) {
+    const { t } = useTranslation();
+    const translationKey = `Recommendation.${recommendation.id}.Text`;
+    const translatedText = t(translationKey);
+    // If translation is same as key (not found) or empty, fallback to original text
+    const textToShow = (translatedText === translationKey || !translatedText) ? recommendation.text : translatedText;
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -45,7 +52,7 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
                         >
                             <IconQuote size={24} style={{ transform: 'rotate(180deg)' }} />
                         </ThemeIcon>
-                        {recommendation.text}
+                        {textToShow}
                         <ThemeIcon
                             size={24}
                             radius="xs"
