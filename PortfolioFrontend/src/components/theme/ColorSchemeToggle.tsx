@@ -15,8 +15,8 @@ export function ColorSchemeToggle() {
             visibleFrom="md"
             style={{
                 position: 'fixed',
-                bottom: rem(20),
-                right: rem(20),
+                top: rem(12),
+                right: rem(24),
                 zIndex: 1000,
                 backgroundColor: 'rgba(10, 16, 30, 0.7)',
                 backdropFilter: 'blur(20px)',

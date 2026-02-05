@@ -45,7 +45,7 @@ namespace PortfolioAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Certificates");
+                    b.ToTable("Certificates", (string)null);
                 });
 
             modelBuilder.Entity("PortfolioAPI.Models.Education", b =>
@@ -77,7 +77,7 @@ namespace PortfolioAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Educations");
+                    b.ToTable("Educations", (string)null);
                 });
 
             modelBuilder.Entity("PortfolioAPI.Models.Experience", b =>
@@ -115,7 +115,7 @@ namespace PortfolioAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Experiences");
+                    b.ToTable("Experiences", (string)null);
                 });
 
             modelBuilder.Entity("PortfolioAPI.Models.Project", b =>
@@ -153,7 +153,7 @@ namespace PortfolioAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Projects");
+                    b.ToTable("Projects", (string)null);
                 });
 
             modelBuilder.Entity("PortfolioAPI.Models.Recommendation", b =>
@@ -186,7 +186,7 @@ namespace PortfolioAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Recommendations");
+                    b.ToTable("Recommendations", (string)null);
                 });
 
             modelBuilder.Entity("PortfolioAPI.Models.Skill", b =>
@@ -209,7 +209,7 @@ namespace PortfolioAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Skills");
+                    b.ToTable("Skills", (string)null);
                 });
 
             modelBuilder.Entity("PortfolioAPI.Models.Translation", b =>
@@ -232,7 +232,7 @@ namespace PortfolioAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Translations");
+                    b.ToTable("Translations", (string)null);
                 });
 #pragma warning restore 612, 618
         }

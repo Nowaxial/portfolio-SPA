@@ -109,7 +109,6 @@ export function ProjectCard({ project }: { project: Project }) {
                                 right: 0,
                                 bottom: 0,
                                 zIndex: 10,
-                                pointerEvents: 'none', // Allow clicking through to buttons
                                 overflow: 'hidden',
                                 borderRadius: '4px',
                             }}
@@ -118,12 +117,14 @@ export function ProjectCard({ project }: { project: Project }) {
                                 style={{
                                     width: '100%',
                                     height: '100%',
-                                    backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${project.imageUrl})`,
+                                    backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${project.imageUrl})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     display: 'flex',
+                                    flexDirection: 'column',
                                     alignItems: 'center',
                                     justifyContent: 'center',
+                                    gap: '20px',
                                     backdropFilter: 'blur(4px)',
                                 }}
                             >
@@ -132,9 +133,60 @@ export function ProjectCard({ project }: { project: Project }) {
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ delay: 0.1 }}
                                 >
-                                    <Group gap={8} style={{ color: 'white', backgroundColor: 'rgba(0,0,0,0.5)', padding: '8px 16px', borderRadius: '20px' }}>
+                                    <Group gap={8} style={{ color: 'white', backgroundColor: 'rgba(0,0,0,0.5)', padding: '8px 16px', borderRadius: '10px' }}>
                                         <IconPhoto size={16} />
                                         <Text size="xs" fw={700} tt="uppercase" lts={1}>{t('Project.PreviewModel')}</Text>
+                                    </Group>
+                                </motion.div>
+
+                                {/* Action Buttons */}
+                                <motion.div
+                                    initial={{ y: 10, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ delay: 0.15 }}
+                                    style={{ pointerEvents: 'auto' }}
+                                >
+                                    <Group gap={12}>
+                                        {project.githubUrl && (
+                                            <Tooltip label={t('Project.ViewOnGitHub')} position="bottom" withinPortal={false}>
+                                                <ActionIcon
+                                                    variant="filled"
+                                                    color="white"
+                                                    size="xl"
+                                                    radius="md"
+                                                    component="a"
+                                                    href={project.githubUrl}
+                                                    target="_blank"
+                                                    aria-label={t('Project.ViewOnGitHub')}
+                                                    style={{
+                                                        color: '#000',
+                                                        transition: 'all 0.2s ease',
+                                                    }}
+                                                >
+                                                    <IconBrandGithub size={20} />
+                                                </ActionIcon>
+                                            </Tooltip>
+                                        )}
+                                        {project.liveUrl && (
+                                            <Tooltip label={t('Project.VisitLiveSite')} position="bottom" withinPortal={false}>
+                                                <ActionIcon
+                                                    variant="filled"
+                                                    color="brand.4"
+                                                    size="xl"
+                                                    radius="md"
+                                                    component="a"
+                                                    href={project.liveUrl}
+                                                    target="_blank"
+                                                    aria-label={t('Project.VisitLiveSite')}
+                                                    style={{
+                                                        color: '#000',
+                                                        transition: 'all 0.2s ease',
+                                                    }}
+                                                >
+                                                    <IconArrowUpRight size={20} />
+                                                </ActionIcon>
+                                            </Tooltip>
+                                        )}
                                     </Group>
                                 </motion.div>
                             </Box>

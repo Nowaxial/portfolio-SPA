@@ -22,10 +22,10 @@ public static class DbInitializer
             
             new Project { 
                 Title = "Editorial Tech Portfolio", 
-                Description = "Högpresterande och arkitektoniskt genomtänkt portfolio byggd med Astro 5 och React 19. Systemet använder en frikopplad arkitektur med en robust .NET 10 Web API backend, EF Core och SQLite. Designen följer en 'Editorial Tech' estetik med fokus på precision, typografi och systemtransparens.",
+                Description = "The live portfolio you are currently exploring. A high-performance, architecturally thoughtful application built with Astro 5 and React 19, powered by a robust .NET 10 Web API backend. It features a decoupled architecture, EF Core integration, and an 'Editorial Tech' design that prioritizes precision and typographic clarity.",
                 TechStack = "Astro 5, React 19, .NET 10, ASP.NET Core, EF Core, SQLite, Mantine UI, TypeScript, Framer Motion",
                 GithubUrl = "https://github.com/Nowaxial/portfolio-spa",
-                ImageUrl = "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
+                ImageUrl = "/portfolio-showcase.png",
                 IsFeatured = true
             },
             new Project { 
@@ -37,19 +37,28 @@ public static class DbInitializer
                 IsFeatured = true
             },
             new Project { 
-                Title = "Lexicon FullStack LMS (SimpliLearn)", 
-                Description = "Gruppprojekt: LMS med avancerat feedback-system för lärare och studenter. Vidareutveckling (Solo): Migrerade hela arkitekturen till Azure för skarp drift. Molnbaserad lagring via Azure Blob Storage och säkrad API-kommunikation med JWT-tokens. Fullständig CI/CD-pipeline och driftsättning till Azure App Service. Intelligent notifieringssystem som filtrerar händelser baserat på kurs- och rollbehörighet.",
-                TechStack = ".NET, Entity Framework, React, SQL Server, Azure Blob Storage, Azure App Service, Azure DevOps, JWT",
+                Title = "Lexicon FullStack LMS", 
+                Description = "Ett omfattande Learning Management System (LMS) utvecklat som gruppprojekt med fokus på rollbaserad behörighet och säkert dataflöde. Systemet hanterar kurser, moduler och aktiviteter med stöd för dokumentinlämningar, automatiserade betygsprocesser och krypterade notifieringar. Arkitekturen följer Clean Architecture-principer för hög skalbarhet och testbarhet.",
+                TechStack = ".NET 9, EF Core 9, SQL Server, Blazor WebAssembly, JWT (Refresh Tokens), AES Encryption, Clean Architecture",
                 GithubUrl = "https://github.com/Nowaxial/Lexicon-FullStack-LMS-Grupp2",
                 ImageUrl = "https://camo.githubusercontent.com/93ec4dbf467cbab4c7d09884678e343441668a748da55a87581eefb464fd8da2/68747470733a2f2f692e6962622e636f2f4e6e7876794773482f4c4d532d4c657869636f6e2d4465736b746f702e6a7067",
+                IsFeatured = true
+            },
+            new Project { 
+                Title = "Reel Obscura", 
+                Description = "Intuitiv webbapplikation för hantering av filmsamlingar med filmtematisk design och modern funktionalitet. Fullständig CRUD-funktionalitet för filmhantering med metadata (titel, år, skådespelare, trailers, IMDB-länkar). Responsiv design med Bootstrap 5 och anpassad filmtematisk UI. Robust felhantering med anpassade 404/500-felsidor och CSRF-skydd. Client- och server-side validering för datasäkerhet.",
+                TechStack = "ASP.NET Core MVC, Bootstrap 5, jQuery, C#, HTML5, CSS3",
+                GithubUrl = "https://github.com/Nowaxial/ReelObscuraAppIndividualProjectMVCLexicon",
+                LiveUrl = "http://reelobscura.runasp.net/",
+                ImageUrl = "/reel-obscura-preview.png",
                 IsFeatured = true
             },
             new Project { 
                 Title = "Computer Inventory API", 
                 Description = "REST API i ASP.NET Core för strukturerad hantering av IT-inventarier och hårdvara. Integrerade Bogus för att generera och validera systemet med storskalig, realistisk testdata. CRUD-operationer med fokus på datasäkerhet och tydlig API-dokumentation via Swagger.",
                 TechStack = "ASP.NET Core, C#, Bogus, Swagger, REST API",
-                GithubUrl = "https://github.com/Nowaxial",
-                ImageUrl = "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+                GithubUrl = "https://github.com/Nowaxial/ComputerInventoryIndividualProjectAPILexicon",
+                ImageUrl = "https://i.ibb.co/rK8cBzR2/Computer-Inventory-API.png",
                 IsFeatured = false
             }
         };
@@ -459,9 +468,9 @@ public static class DbInitializer
 
             // Project 1: Editorial Tech Portfolio
             new Translation { Key = "Project.1.Title", LanguageCode = "en", Value = "Editorial Tech Portfolio" },
-            new Translation { Key = "Project.1.Description", LanguageCode = "en", Value = "High-performance and architecturally thoughtful portfolio built with Astro 5 and React 19. The system uses a decoupled architecture with a robust .NET 10 Web API backend, EF Core, and SQLite. The design follows an 'Editorial Tech' aesthetic focusing on precision, typography, and system transparency." },
+            new Translation { Key = "Project.1.Description", LanguageCode = "en", Value = "The live portfolio you are currently exploring. A high-performance, architecturally thoughtful application built with Astro 5 and React 19, powered by a robust .NET 10 Web API backend. It features a decoupled architecture, EF Core integration, and an 'Editorial Tech' design that prioritizes precision and typographic clarity." },
             new Translation { Key = "Project.1.Title", LanguageCode = "sv", Value = "Editorial Tech Portfolio" },
-            new Translation { Key = "Project.1.Description", LanguageCode = "sv", Value = "Högpresterande och arkitektoniskt genomtänkt portfolio byggd med Astro 5 och React 19. Systemet använder en frikopplad arkitektur med en robust .NET 10 Web API backend, EF Core och SQLite. Designen följer en 'Editorial Tech' estetik med fokus på precision, typografi och systemtransparens." },
+            new Translation { Key = "Project.1.Description", LanguageCode = "sv", Value = "Den här portfolion som du tittar på just nu. En högpresterande och arkitektoniskt genomtänkt applikation byggd med Astro 5 och React 19, med en robust .NET 10 Web API backend. Designen följer en 'Editorial Tech' estetik med fokus på precision och typografi." },
 
              // Updated Profile and About
              
@@ -477,16 +486,22 @@ public static class DbInitializer
             new Translation { Key = "Project.2.Description", LanguageCode = "sv", Value = "Plattform för utvecklare byggd på Blazor WebAssembly och ASP.NET Core med ren separation av lager. Omfattande API med stöd för hantering av Competencies, Education, Licenses och Tech Stacks. Fullständig användarhantering via ASP.NET Core Identity med säkra inloggnings- och profilsystem. Optimerad koddelning mellan frontend och backend genom Shared-projekt. Avancerad loggning med Serilog och dokumentation via Swagger UI." },
 
             // Project 3: Lexicon FullStack LMS
-            new Translation { Key = "Project.3.Title", LanguageCode = "en", Value = "Lexicon FullStack LMS (SimpliLearn)" },
-            new Translation { Key = "Project.3.Description", LanguageCode = "en", Value = "Group project: LMS with advanced feedback system for teachers and students. Further development (Solo): Migrated entire architecture to Azure. Cloud-based storage via Azure Blob Storage and secured API communication with JWT tokens. Full CI/CD pipeline and deployment to Azure App Service. Intelligent notification system filtering events based on course and role permissions." },
+            new Translation { Key = "Project.3.Title", LanguageCode = "en", Value = "Lexicon FullStack LMS" },
+            new Translation { Key = "Project.3.Description", LanguageCode = "en", Value = "A comprehensive Learning Management System developed as a group project with a focus on role-based access control and secure data flow. Features course management, automated grading workflows, and encrypted notification systems (AES). Built using Clean Architecture for high maintainability and testability." },
             new Translation { Key = "Project.3.Title", LanguageCode = "sv", Value = "Lexicon FullStack LMS (SimpliLearn)" },
-            new Translation { Key = "Project.3.Description", LanguageCode = "sv", Value = "Gruppprojekt: LMS med avancerat feedback-system för lärare och studenter. Vidareutveckling (Solo): Migrerade hela arkitekturen till Azure för skarp drift. Molnbaserad lagring via Azure Blob Storage och säkrad API-kommunikation med JWT-tokens. Fullständig CI/CD-pipeline och driftsättning till Azure App Service. Intelligent notifieringssystem som filtrerar händelser baserat på kurs- och rollbehörighet." },
+            new Translation { Key = "Project.3.Description", LanguageCode = "sv", Value = "Ett omfattande Learning Management System (LMS) utvecklat som ett gruppprojekt med fokus på rollbaserad behörighetsstyrning och säkert dataflöde. Innehåller kurshantering, automatiserade rättningsflöden och ett krypterat notifieringssystem (AES). Byggt enligt Clean Architecture för hög underhållbarhet och testbarhet." },
 
-            // Project 4: Computer Inventory API
-            new Translation { Key = "Project.4.Title", LanguageCode = "en", Value = "Computer Inventory API" },
-            new Translation { Key = "Project.4.Description", LanguageCode = "en", Value = "REST API in ASP.NET Core for structured management of IT inventory and hardware. Integrated Bogus to generate and validate the system with large-scale, realistic test data. CRUD operations focusing on data security and clear API documentation via Swagger." },
-            new Translation { Key = "Project.4.Title", LanguageCode = "sv", Value = "Computer Inventory API" },
-            new Translation { Key = "Project.4.Description", LanguageCode = "sv", Value = "REST API i ASP.NET Core för strukturerad hantering av IT-inventarier och hårdvara. Integrerade Bogus för att generera och validera systemet med storskalig, realistisk testdata. CRUD-operationer med fokus på datasäkerhet och tydlig API-dokumentation via Swagger." }
+            // Project 4: Reel Obscura
+            new Translation { Key = "Project.4.Title", LanguageCode = "en", Value = "Reel Obscura" },
+            new Translation { Key = "Project.4.Description", LanguageCode = "en", Value = "Intuitive web application for managing film collections with cinematic design and modern functionality. Full CRUD functionality for film management with metadata (title, year, actors, trailers, IMDB links). Responsive design with Bootstrap 5 and custom cinematic UI. Robust error handling with custom 404/500 error pages and CSRF protection. Client- and server-side validation for data security." },
+            new Translation { Key = "Project.4.Title", LanguageCode = "sv", Value = "Reel Obscura" },
+            new Translation { Key = "Project.4.Description", LanguageCode = "sv", Value = "Intuitiv webbapplikation för hantering av filmsamlingar med filmtematisk design och modern funktionalitet. Fullständig CRUD-funktionalitet för filmhantering med metadata (titel, år, skådespelare, trailers, IMDB-länkar). Responsiv design med Bootstrap 5 och anpassad filmtematisk UI. Robust felhantering med anpassade 404/500-felsidor och CSRF-skydd. Client- och server-side validering för datasäkerhet." },
+
+            // Project 5: Computer Inventory API
+            new Translation { Key = "Project.5.Title", LanguageCode = "en", Value = "Computer Inventory API" },
+            new Translation { Key = "Project.5.Description", LanguageCode = "en", Value = "REST API in ASP.NET Core for structured management of IT inventory and hardware. Integrated Bogus to generate and validate the system with large-scale, realistic test data. CRUD operations focusing on data security and clear API documentation via Swagger." },
+            new Translation { Key = "Project.5.Title", LanguageCode = "sv", Value = "Computer Inventory API" },
+            new Translation { Key = "Project.5.Description", LanguageCode = "sv", Value = "REST API i ASP.NET Core för strukturerad hantering av IT-inventarier och hårdvara. Integrerade Bogus för att generera och validera systemet med storskalig, realistisk testdata. CRUD-operationer med fokus på datasäkerhet och tydlig API-dokumentation via Swagger." }
         };
 
         foreach (Translation t in translations)

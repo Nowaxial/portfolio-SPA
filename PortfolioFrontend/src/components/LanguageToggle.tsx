@@ -40,8 +40,8 @@ export function LanguageToggle({ mini = false }: { mini?: boolean }) {
             visibleFrom="md"
             style={{
                 position: 'fixed',
-                bottom: rem(20),
-                right: rem(64),
+                top: rem(12),
+                right: rem(68),
                 zIndex: 1000,
                 backgroundColor: 'rgba(10, 16, 30, 0.7)',
                 backdropFilter: 'blur(20px)',

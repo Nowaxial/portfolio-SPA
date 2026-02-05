@@ -19,10 +19,8 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
         const fetchTranslations = async () => {
             setLoading(true);
             try {
-                // In production, this would be an absolute URL or proxy
-                // For local dev, we might need the full URL if running on different ports
-                // Assuming proxy is set up or CORS allows it
-                const response = await fetch(`http://localhost:5073/api/translations?lang=${language}`);
+                // Use relative URL in production (same domain), works with proxy in development
+                const response = await fetch(`/api/translations?lang=${language}`);
                 if (response.ok) {
                     const data = await response.json();
                     setTranslations(data);
