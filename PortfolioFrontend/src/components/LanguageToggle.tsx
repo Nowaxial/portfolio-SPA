@@ -5,8 +5,11 @@ export function LanguageToggle({ mini = false }: { mini?: boolean }) {
     const { language, setLanguage } = useTranslation();
 
     const toggleLanguage = () => {
-        setLanguage(language === 'en' ? 'sv' : 'en');
+        setLanguage(language === 'sv' ? 'en' : 'sv');
     };
+
+    // Show the language you can switch TO, not the current language
+    const targetLanguage = language === 'sv' ? 'EN' : 'SV';
 
     if (mini) {
         return (
@@ -25,7 +28,7 @@ export function LanguageToggle({ mini = false }: { mini?: boolean }) {
                     padding: `0 ${rem(4)}`
                 }}
             >
-                {language.toUpperCase()}
+                {targetLanguage}
             </ActionIcon>
         );
     }
@@ -64,7 +67,7 @@ export function LanguageToggle({ mini = false }: { mini?: boolean }) {
                     lineHeight: 1
                 }}
             >
-                {language.toUpperCase()}
+                {targetLanguage}
             </Text>
         </ActionIcon>
     );
