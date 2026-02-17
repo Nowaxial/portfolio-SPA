@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface CiCdIconProps {
     size?: number;
     color?: string;

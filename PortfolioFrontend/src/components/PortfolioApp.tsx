@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { ColorSchemeToggle } from './theme/ColorSchemeToggle';
 import { PortfolioContent } from './PortfolioContent';
@@ -16,10 +16,23 @@ import { LanguageToggle } from './LanguageToggle';
 import { TranslationProvider } from './TranslationContext';
 
 export function PortfolioApp({ projects, skills, recommendations }: PortfolioAppProps) {
+    const scrollToTop = () => {
+        console.log('scrollToTop clicked!');
+        // Try smooth scroll first, fallback to instant
+        try {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+            document.body.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (e) {
+            console.error('Scroll error:', e);
+            window.scrollTo(0, 0);
+        }
+    };
+
     useEffect(() => {
         const handleEscKey = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                scrollToTop();
             }
         };
 
@@ -32,11 +45,10 @@ export function PortfolioApp({ projects, skills, recommendations }: PortfolioApp
             <ThemeProvider>
                 <Header />
                 <PortfolioContent projects={projects} skills={skills} recommendations={recommendations} />
-                <Footer />
+                <Footer onScrollToTop={scrollToTop} />
                 <ColorSchemeToggle />
                 <LanguageToggle />
             </ThemeProvider>
         </TranslationProvider>
     );
 }
-

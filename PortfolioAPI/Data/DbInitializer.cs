@@ -488,7 +488,7 @@ public static class DbInitializer
             // Project 3: Lexicon FullStack LMS
             new Translation { Key = "Project.3.Title", LanguageCode = "en", Value = "Lexicon FullStack LMS" },
             new Translation { Key = "Project.3.Description", LanguageCode = "en", Value = "A comprehensive Learning Management System developed as a group project with a focus on role-based access control and secure data flow. Features course management, automated grading workflows, and encrypted notification systems (AES). Built using Clean Architecture for high maintainability and testability." },
-            new Translation { Key = "Project.3.Title", LanguageCode = "sv", Value = "Lexicon FullStack LMS (SimpliLearn)" },
+            new Translation { Key = "Project.3.Title", LanguageCode = "sv", Value = "Lexicon FullStack LMS" },
             new Translation { Key = "Project.3.Description", LanguageCode = "sv", Value = "Ett omfattande Learning Management System (LMS) utvecklat som ett gruppprojekt med fokus på rollbaserad behörighetsstyrning och säkert dataflöde. Innehåller kurshantering, automatiserade rättningsflöden och ett krypterat notifieringssystem (AES). Byggt enligt Clean Architecture för hög underhållbarhet och testbarhet." },
 
             // Project 4: Reel Obscura

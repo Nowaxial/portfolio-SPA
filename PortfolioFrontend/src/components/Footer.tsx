@@ -1,13 +1,12 @@
-import React from 'react';
-import { Container, Group, Text, Divider, Box, ActionIcon, Stack } from '@mantine/core';
+import { Container, Group, Text, Divider, Box, ActionIcon, Stack, Grid } from '@mantine/core';
 import { IconBrandLinkedin, IconBrandGithub, IconMail, IconArrowUp } from '@tabler/icons-react';
+ 
+interface FooterProps {
+    onScrollToTop: () => void;
+}
 
-export function Footer() {
+export function Footer({ onScrollToTop }: FooterProps) {
     const currentYear = new Date().getFullYear();
-
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
 
     return (
         <Box
@@ -62,13 +61,13 @@ export function Footer() {
                                 variant="outline"
                                 color="gray"
                                 radius="xs"
-                                onClick={scrollToTop}
+                                onClick={onScrollToTop}
                                 aria-label="Scroll to top"
                             >
                                 <IconArrowUp size={18} />
                             </ActionIcon>
                             <Text size="xs" c="dimmed" style={{ fontFamily: 'JetBrains Mono' }}>
-                                ESC to top
+                                Click to top
                             </Text>
                         </Stack>
                     </Grid.Col>
@@ -88,5 +87,3 @@ export function Footer() {
         </Box>
     );
 }
-
-import { Grid } from '@mantine/core';

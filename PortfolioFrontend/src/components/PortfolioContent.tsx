@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Container, Grid, Title, Box, Badge, Text, Group, Divider, Stack, Skeleton, Alert, Paper } from '@mantine/core';
 import { IconAlertCircle } from '@tabler/icons-react';
 import { TerminalHero } from './Hero';

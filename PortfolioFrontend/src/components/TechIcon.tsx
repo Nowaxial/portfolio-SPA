@@ -1,4 +1,3 @@
-import React from 'react';
 import * as SiIcons from 'react-icons/si';
 import { SiReact } from 'react-icons/si';
 import type { IconType } from 'react-icons';

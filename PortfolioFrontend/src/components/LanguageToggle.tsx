@@ -1,6 +1,5 @@
 import { ActionIcon, Text, rem } from '@mantine/core';
 import { useTranslation } from './TranslationContext';
-import React from 'react';
 
 export function LanguageToggle({ mini = false }: { mini?: boolean }) {
     const { language, setLanguage } = useTranslation();

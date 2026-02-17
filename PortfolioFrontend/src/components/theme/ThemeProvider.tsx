@@ -1,6 +1,5 @@
 import { createTheme, MantineProvider, localStorageColorSchemeManager, type MantineTheme } from '@mantine/core';
 import '@mantine/core/styles.css';
-import React from 'react';
 
 const colorSchemeManager = localStorageColorSchemeManager({
     key: 'mantine-color-scheme',

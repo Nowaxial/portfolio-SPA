@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Title, Text, Container, Box, Group, Badge, Stack, Button } from '@mantine/core';
 import { useTranslation } from './TranslationContext';

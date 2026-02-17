@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, Text, Badge, Group, ActionIcon, Box, Title, Tooltip } from '@mantine/core';
 import { IconBrandGithub, IconArrowUpRight, IconPhoto } from '@tabler/icons-react';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Avatar, Text, Stack, Title, Group, Paper, Divider, Button, ActionIcon, Tooltip } from '@mantine/core';
 import { IconBrandLinkedin, IconBrandGithub, IconMail, IconDownload } from '@tabler/icons-react';
 import { useTranslation } from './TranslationContext';

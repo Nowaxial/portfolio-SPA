@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Text, Avatar, Group, Stack, Paper, ThemeIcon } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { IconQuote } from '@tabler/icons-react';

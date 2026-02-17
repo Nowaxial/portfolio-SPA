@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Text, Box, Group, Stack, rem, UnstyledButton } from '@mantine/core';
 import { IconBrandGithub, IconTerminal2, IconPointFilled, IconClock } from '@tabler/icons-react';
 
