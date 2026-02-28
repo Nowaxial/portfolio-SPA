@@ -49,7 +49,7 @@ export function ProfileCard() {
                 <Stack gap="md">
                     <Button
                         component="a"
-                        href="/Maria_Toledo_CV.pdf"
+                        href="/Maria_Toledo.pdf"
                         target="_blank"
                         leftSection={<IconDownload size={18} />}
                         variant="filled"

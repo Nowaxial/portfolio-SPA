@@ -33,7 +33,7 @@ public static class DbInitializer
                 Description = "Plattform för utvecklare byggd på Blazor WebAssembly och ASP.NET Core med ren separation av lager. Omfattande API med stöd för hantering av Competencies, Education, Licenses och Tech Stacks. Fullständig användarhantering via ASP.NET Core Identity med säkra inloggnings- och profilsystem. Optimerad koddelning mellan frontend och backend genom Shared-projekt. Avancerad loggning med Serilog och dokumentation via Swagger UI.",
                 TechStack = "Blazor WebAssembly, ASP.NET Core, ASP.NET Core Identity, Serilog, Swagger UI, C#",
                 GithubUrl = "https://github.com/Nowaxial/devshowcase-platform",
-                ImageUrl = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+                ImageUrl = "/devshowcase-platform.png",
                 IsFeatured = true
             },
             new Project { 
@@ -92,7 +92,6 @@ public static class DbInitializer
             
             // Frontend & Design
             new Skill { Name = "React", Category = "Frontend", IconKey = "devicon-react-original" },
-            new Skill { Name = "React.js", Category = "Frontend", IconKey = "devicon-react-original" },
             new Skill { Name = "Next.js", Category = "Frontend", IconKey = "devicon-nextjs-plain" },
             new Skill { Name = "Blazor WASM", Category = "Frontend", IconKey = "si-blazor" },
             new Skill { Name = "JavaScript", Category = "Frontend", IconKey = "devicon-javascript-plain" },
@@ -112,7 +111,6 @@ public static class DbInitializer
             new Skill { Name = "CI/CD", Category = "DevOps", IconKey = "custom-cicd" },
             new Skill { Name = "Git", Category = "DevOps", IconKey = "devicon-git-plain" },
             new Skill { Name = "GitHub", Category = "DevOps", IconKey = "devicon-github-original" },
-            new Skill { Name = "Docker", Category = "DevOps", IconKey = "devicon-docker-plain" },
             new Skill { Name = "Swagger", Category = "DevOps", IconKey = "si-swagger" },
             
             // Methodology & Other
@@ -123,10 +121,6 @@ public static class DbInitializer
             new Skill { Name = "Web Security", Category = "Security", IconKey = "si-letsencrypt" },
             new Skill { Name = "OWASP", Category = "Security", IconKey = "si-owasp" },
             new Skill { Name = "Koha", Category = "Other", IconKey = "custom-koha" },
-            new Skill { Name = "Perl", Category = "Backend", IconKey = "devicon-perl-plain" },
-            new Skill { Name = "PHP", Category = "Backend", IconKey = "devicon-php-plain" },
-            new Skill { Name = "Laravel", Category = "Backend", IconKey = "devicon-laravel-original" },
-            new Skill { Name = "CodeIgniter", Category = "Backend", IconKey = "devicon-codeigniter-plain" }
         };
 
         foreach (Skill s in skills)
@@ -480,9 +474,9 @@ public static class DbInitializer
             new Translation { Key = "Summary.Text", LanguageCode = "sv", Value = "Från felsökning av biografprojektorer till arkitektur av .NET API:er har jag alltid varit personen som ser till att systemet är igång. Min bakgrund inom nätverkssäkerhet kombinerat med modern .NET-utveckling gör att jag kan bygga robusta, säkra och användarcentrerade applikationer." },
 
             // Project 2: DevShowCase Platform
-            new Translation { Key = "Project.2.Title", LanguageCode = "en", Value = "DevShowCase Platform" },
+            new Translation { Key = "Project.2.Title", LanguageCode = "en", Value = "DevShowCase Platform (Ongoing Project)" },
             new Translation { Key = "Project.2.Description", LanguageCode = "en", Value = "Developer platform built on Blazor WebAssembly and ASP.NET Core with clean layer separation. Comprehensive API supporting Competencies, Education, Licenses, and Tech Stacks. Full user management via ASP.NET Core Identity with secure login and profile systems. Optimized code sharing between frontend and backend via Shared projects. Advanced logging with Serilog and documentation via Swagger UI." },
-            new Translation { Key = "Project.2.Title", LanguageCode = "sv", Value = "DevShowCase Platform" },
+            new Translation { Key = "Project.2.Title", LanguageCode = "sv", Value = "DevShowCase Platform (Pågående projekt)" },
             new Translation { Key = "Project.2.Description", LanguageCode = "sv", Value = "Plattform för utvecklare byggd på Blazor WebAssembly och ASP.NET Core med ren separation av lager. Omfattande API med stöd för hantering av Competencies, Education, Licenses och Tech Stacks. Fullständig användarhantering via ASP.NET Core Identity med säkra inloggnings- och profilsystem. Optimerad koddelning mellan frontend och backend genom Shared-projekt. Avancerad loggning med Serilog och dokumentation via Swagger UI." },
 
             // Project 3: Lexicon FullStack LMS

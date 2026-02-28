@@ -18,6 +18,22 @@ export default defineConfig({
                     secure: false
                 }
             }
+        },
+        build: {
+            chunkSizeWarningLimit: 6000,
+            rollupOptions: {
+                output: {
+                    manualChunks(id) {
+                        if (id.includes('node_modules')) {
+                            if (id.includes('@mantine')) return 'mantine';
+                            if (id.includes('@tabler/icons') || id.includes('react-icons')) return 'icons';
+                            if (id.includes('framer-motion')) return 'animation';
+                            if (id.includes('react') || id.includes('react-dom')) return 'vendor';
+                            return 'vendor';
+                        }
+                    }
+                }
+            }
         }
     }
 });

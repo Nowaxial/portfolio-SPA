@@ -141,7 +141,7 @@ export function Header() {
                             style={{
                                 fontSize: rem(28),
                                 fontWeight: 900,
-                                color: 'var(--mantine-color-text)',
+                                color: 'var(--mantine-color-white)',
                                 textDecoration: 'none',
                                 padding: `${rem(20)} ${rem(10)}`,
                                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -157,7 +157,7 @@ export function Header() {
                             }}
                             onMouseLeave={(e) => {
                                 e.currentTarget.style.transform = 'translateX(0)';
-                                e.currentTarget.style.color = 'var(--mantine-color-text)';
+                                e.currentTarget.style.color = 'var(--mantine-color-white)';
                             }}
                         >
                             <Text size="xs" fw={700} ff="Space Grotesk" c="brand.4" style={{ width: rem(20) }}>
